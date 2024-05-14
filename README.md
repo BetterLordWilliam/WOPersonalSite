@@ -5,7 +5,7 @@ My website where I will showcase my content (professional and otherwise) to the 
 ## Tech Stack
 - NextJS
 - Tailwindcss
-- Notion, used as CMS as the integration feature allows site to access notion content
+- Notion
 - Pocketbase DB
 
 ## TO-DO
@@ -23,5 +23,8 @@ My website where I will showcase my content (professional and otherwise) to the 
     - [ ] Create the page features
     - [ ] Test the page features
     - [ ] Style the page
-- [ ] Hobby Zone... (detail later)    
+- [ ] Hobby Zone... (detail later)
 
+| Table test | Table test 1 | Table test 2 |
+| ---------- | ------------ | ------------ |
+| value | value | value |
