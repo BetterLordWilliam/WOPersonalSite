@@ -2,7 +2,7 @@
 
 My website where I will showcase my content (professional and otherwise) to the world.
 
-** Hosted Link ** : ⏳: `coming soon`
+**Hosted Link** : ⏳: `coming soon`
 
 ## Tech Stack
 - :computer: NextJS
