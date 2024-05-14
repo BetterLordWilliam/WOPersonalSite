@@ -1,35 +1,3 @@
 {
-  "cacheItemsMap": {
-    "portfolio/test.md": {
-      "document": {
-        "title": "Test Portfolio\r",
-        "date": "2024-05-11T00:00:00.000Z",
-        "slug": "testportfolio",
-        "tags": [],
-        "image": {
-          "src": "/images/portfolio/Templar.png",
-          "width": 563,
-          "height": 635,
-          "type": "Image",
-          "_raw": {}
-        },
-        "body": {
-          "raw": "\r\nTest Portfolio",
-          "html": "<p>Test Portfolio</p>"
-        },
-        "_id": "portfolio/test.md",
-        "_raw": {
-          "sourceFilePath": "portfolio/test.md",
-          "sourceFileName": "test.md",
-          "sourceFileDir": "portfolio",
-          "contentType": "markdown",
-          "flattenedPath": "portfolio/test"
-        },
-        "type": "Portfolio"
-      },
-      "documentHash": "1715494114660",
-      "hasWarnings": false,
-      "documentTypeName": "Portfolio"
-    }
-  }
+  "cacheItemsMap": {}
 }

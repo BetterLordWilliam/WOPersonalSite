@@ -21,7 +21,7 @@ var Portfolio = defineDocumentType(() => ({
   }
 }));
 var contentlayer_config_default = makeSource({
-  contentDirPath: "./app/content",
+  contentDirPath: "./content",
   documentTypes: [Portfolio]
 });
 export {
@@ -29,4 +29,4 @@ export {
   Portfolio,
   contentlayer_config_default as default
 };
-//# sourceMappingURL=compiled-contentlayer-config-N32DU4XT.mjs.map
+//# sourceMappingURL=compiled-contentlayer-config-LEHTJGHX.mjs.map

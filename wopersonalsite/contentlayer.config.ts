@@ -23,6 +23,6 @@ export const Portfolio = defineDocumentType(() => ({
 }));
 
 export default makeSource({
-    contentDirPath: "./app/content",
+    contentDirPath: "./content",
     documentTypes: [Portfolio]
 })
