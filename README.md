@@ -3,10 +3,10 @@
 My website where I will showcase my content (professional and otherwise) to the world.
 
 ## Tech Stack
-- NextJS
-- Tailwindcss
-- Notion
-- Pocketbase DB
+- :computer: NextJS
+- :tada: Tailwindcss
+- :floppy_disk: Notion
+- :minidisc: Pocketbase DB
 
 ## TO-DO
 
@@ -24,7 +24,3 @@ My website where I will showcase my content (professional and otherwise) to the 
     - [ ] Test the page features
     - [ ] Style the page
 - [ ] Hobby Zone... (detail later)
-
-| Table test | Table test 1 | Table test 2 |
-| ---------- | ------------ | ------------ |
-| value | value | value |
