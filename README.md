@@ -1,8 +1,8 @@
 # Personal Website
 
-My website where I will showcase my content (professional and otherwise) to the world.
+**Hosted Link** : ⏳ `coming soon` ⌛
 
-**Hosted Link** : ⏳: `coming soon`
+My website where I will showcase my content (professional and otherwise) to the world.
 
 ## Tech Stack
 - :computer: NextJS
