@@ -1,0 +1,32 @@
+{
+  "title": "Test Project",
+  "date": "2024-05-13T00:00:00.000Z",
+  "slug": "test-project",
+  "notionId": "aaebccde-0c12-4eaa-9aea-763952d50f66",
+  "tags": [
+    "Test",
+    "Test1",
+    "Test2",
+    "Test3"
+  ],
+  "image": {
+    "src": "/images/portfolio/addict.png",
+    "width": 288,
+    "height": 313,
+    "type": "Image",
+    "_raw": {}
+  },
+  "body": {
+    "raw": "undefined",
+    "html": "<p>undefined</p>"
+  },
+  "_id": "portfolio/test-project.md",
+  "_raw": {
+    "sourceFilePath": "portfolio/test-project.md",
+    "sourceFileName": "test-project.md",
+    "sourceFileDir": "portfolio",
+    "contentType": "markdown",
+    "flattenedPath": "portfolio/test-project"
+  },
+  "type": "Portfolio"
+}

@@ -1,0 +1,31 @@
+{
+  "title": "Test Project 2",
+  "date": "2024-05-15T00:00:00.000Z",
+  "slug": "test-project-2",
+  "notionId": "65ebc367-a96d-4ecc-8870-0ea8053d858b",
+  "tags": [
+    "Test3",
+    "Test",
+    "Test2"
+  ],
+  "image": {
+    "src": "/images/portfolio/Demon rat.png",
+    "width": 231,
+    "height": 185,
+    "type": "Image",
+    "_raw": {}
+  },
+  "body": {
+    "raw": "undefined",
+    "html": "<p>undefined</p>"
+  },
+  "_id": "portfolio/test-project-2.md",
+  "_raw": {
+    "sourceFilePath": "portfolio/test-project-2.md",
+    "sourceFileName": "test-project-2.md",
+    "sourceFileDir": "portfolio",
+    "contentType": "markdown",
+    "flattenedPath": "portfolio/test-project-2"
+  },
+  "type": "Portfolio"
+}
