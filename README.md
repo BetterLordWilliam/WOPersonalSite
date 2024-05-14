@@ -1,6 +1,12 @@
 # Personal Website
 
-NextJS personal website. Much more of a passion project than my previous attempt at creating a personal website w/ NodeJS.
+My website where I will showcase my content (professional and otherwise) to the world.
+
+## Tech Stack
+- NextJS
+- Tailwindcss
+- Notion, used as CMS as the integration feature allows site to access notion content
+- Pocketbase DB
 
 ## TO-DO
 
@@ -17,9 +23,5 @@ NextJS personal website. Much more of a passion project than my previous attempt
     - [ ] Create the page features
     - [ ] Test the page features
     - [ ] Style the page
-
-## Tech Stack
-- NextJS
-- Tailwindcss
-- Notion, used as CMS as the integration feature allows site to access notion content
+- [ ] Hobby Zone... (detail later)    
 
