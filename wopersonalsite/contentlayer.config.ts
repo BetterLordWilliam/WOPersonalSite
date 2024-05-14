@@ -18,7 +18,8 @@ export const Portfolio = defineDocumentType(() => ({
         slug: {type: "string", required: true},
         notionId: {type: "string", required: false},
         tags: {type: "list", of: {type: "string"}, required: false },
-        image: {type: "nested", of: Image, required: true}
+        enabled: {type: "boolean", required: false},
+        image: {type: "nested", of: Image, required: true},
     }
 }));
 

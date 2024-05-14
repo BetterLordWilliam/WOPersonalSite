@@ -7,6 +7,7 @@
     "Test2",
     "Test1"
   ],
+  "enabled": true,
   "image": {
     "src": "/images/portfolio/drangh.png",
     "width": 138,

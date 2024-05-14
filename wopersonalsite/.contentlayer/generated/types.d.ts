@@ -18,6 +18,7 @@ export type Portfolio = {
   slug: string
   notionId?: string | undefined
   tags?: string[] | undefined
+  enabled?: boolean | undefined
   image: Image
   /** Markdown file body */
   body: Markdown

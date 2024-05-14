@@ -3,6 +3,7 @@
   "date": "2024-05-11T00:00:00.000Z",
   "slug": "testportfolio1",
   "tags": [],
+  "enabled": false,
   "image": {
     "src": "/images/portfolio/doom.jpg",
     "width": 1920,

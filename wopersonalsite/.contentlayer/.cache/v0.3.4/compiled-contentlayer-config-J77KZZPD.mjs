@@ -17,6 +17,7 @@ var Portfolio = defineDocumentType(() => ({
     slug: { type: "string", required: true },
     notionId: { type: "string", required: false },
     tags: { type: "list", of: { type: "string" }, required: false },
+    enabled: { type: "boolean", required: false },
     image: { type: "nested", of: Image, required: true }
   }
 }));
@@ -29,4 +30,4 @@ export {
   Portfolio,
   contentlayer_config_default as default
 };
-//# sourceMappingURL=compiled-contentlayer-config-LEHTJGHX.mjs.map
+//# sourceMappingURL=compiled-contentlayer-config-J77KZZPD.mjs.map

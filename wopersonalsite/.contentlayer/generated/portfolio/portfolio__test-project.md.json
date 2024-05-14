@@ -9,6 +9,7 @@
     "Test2",
     "Test3"
   ],
+  "enabled": true,
   "image": {
     "src": "/images/portfolio/addict.png",
     "width": 288,

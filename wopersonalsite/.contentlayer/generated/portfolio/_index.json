@@ -8,6 +8,7 @@
       "Test2",
       "Test1"
     ],
+    "enabled": true,
     "image": {
       "src": "/images/portfolio/drangh.png",
       "width": 138,
@@ -39,6 +40,7 @@
       "Test",
       "Test2"
     ],
+    "enabled": true,
     "image": {
       "src": "/images/portfolio/Demon rat.png",
       "width": 231,
@@ -61,6 +63,36 @@
     "type": "Portfolio"
   },
   {
+    "title": "Test Project 3",
+    "date": "2024-05-16T00:00:00.000Z",
+    "slug": "test-project-3",
+    "notionId": "4eb1cdea-78f7-404f-8ece-03ff7d162c2c",
+    "tags": [
+      "Test1"
+    ],
+    "enabled": true,
+    "image": {
+      "src": "/images/portfolio/Budai.png",
+      "width": 381,
+      "height": 513,
+      "type": "Image",
+      "_raw": {}
+    },
+    "body": {
+      "raw": "mega undefined",
+      "html": "<p>mega undefined</p>"
+    },
+    "_id": "portfolio/test-project-3.md",
+    "_raw": {
+      "sourceFilePath": "portfolio/test-project-3.md",
+      "sourceFileName": "test-project-3.md",
+      "sourceFileDir": "portfolio",
+      "contentType": "markdown",
+      "flattenedPath": "portfolio/test-project-3"
+    },
+    "type": "Portfolio"
+  },
+  {
     "title": "Test Project",
     "date": "2024-05-13T00:00:00.000Z",
     "slug": "test-project",
@@ -71,6 +103,7 @@
       "Test2",
       "Test3"
     ],
+    "enabled": true,
     "image": {
       "src": "/images/portfolio/addict.png",
       "width": 288,
@@ -93,36 +126,11 @@
     "type": "Portfolio"
   },
   {
-    "title": "Test Portfolio\r",
-    "date": "2024-05-11T00:00:00.000Z",
-    "slug": "testportfolio",
-    "tags": [],
-    "image": {
-      "src": "/images/portfolio/Templar.png",
-      "width": 563,
-      "height": 635,
-      "type": "Image",
-      "_raw": {}
-    },
-    "body": {
-      "raw": "\r\nTest Portfolio",
-      "html": "<p>Test Portfolio</p>"
-    },
-    "_id": "portfolio/test.md",
-    "_raw": {
-      "sourceFilePath": "portfolio/test.md",
-      "sourceFileName": "test.md",
-      "sourceFileDir": "portfolio",
-      "contentType": "markdown",
-      "flattenedPath": "portfolio/test"
-    },
-    "type": "Portfolio"
-  },
-  {
     "title": "Test Portfolio 1\r",
     "date": "2024-05-11T00:00:00.000Z",
     "slug": "testportfolio1",
     "tags": [],
+    "enabled": false,
     "image": {
       "src": "/images/portfolio/doom.jpg",
       "width": 1920,
@@ -141,6 +149,33 @@
       "sourceFileDir": "portfolio",
       "contentType": "markdown",
       "flattenedPath": "portfolio/test1"
+    },
+    "type": "Portfolio"
+  },
+  {
+    "title": "Test Portfolio\r",
+    "date": "2024-05-11T00:00:00.000Z",
+    "slug": "testportfolio",
+    "tags": [],
+    "enabled": false,
+    "image": {
+      "src": "/images/portfolio/Templar.png",
+      "width": 563,
+      "height": 635,
+      "type": "Image",
+      "_raw": {}
+    },
+    "body": {
+      "raw": "\r\nTest Portfolio",
+      "html": "<p>Test Portfolio</p>"
+    },
+    "_id": "portfolio/test.md",
+    "_raw": {
+      "sourceFilePath": "portfolio/test.md",
+      "sourceFileName": "test.md",
+      "sourceFileDir": "portfolio",
+      "contentType": "markdown",
+      "flattenedPath": "portfolio/test"
     },
     "type": "Portfolio"
   }

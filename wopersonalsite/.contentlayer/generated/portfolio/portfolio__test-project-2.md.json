@@ -8,6 +8,7 @@
     "Test",
     "Test2"
   ],
+  "enabled": true,
   "image": {
     "src": "/images/portfolio/Demon rat.png",
     "width": 231,

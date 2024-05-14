@@ -20,6 +20,7 @@ const Page:React.FC<Params> = ({params: {slug}}) => {
         notFound();
     };
 
+    // Default content return
     return <div className="mx-auto max-w-4xl">
         <h1 className="py-4 font-bold text-3xl">{item?.title}</h1>
         <Image className="w-full"
