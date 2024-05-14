@@ -18,8 +18,8 @@
           "_raw": {}
         },
         "body": {
-          "raw": "undefined",
-          "html": "<p>undefined</p>"
+          "raw": "\nContent",
+          "html": "<p>Content</p>"
         },
         "_id": "portfolio/test-project-1.md",
         "_raw": {
@@ -31,7 +31,7 @@
         },
         "type": "Portfolio"
       },
-      "documentHash": "1715660437508",
+      "documentHash": "1715660766944",
       "hasWarnings": true,
       "documentTypeName": "Portfolio"
     },
@@ -54,8 +54,8 @@
           "_raw": {}
         },
         "body": {
-          "raw": "undefined",
-          "html": "<p>undefined</p>"
+          "raw": "\nContent",
+          "html": "<p>Content</p>"
         },
         "_id": "portfolio/test-project-2.md",
         "_raw": {
@@ -67,7 +67,7 @@
         },
         "type": "Portfolio"
       },
-      "documentHash": "1715660437621",
+      "documentHash": "1715660772773",
       "hasWarnings": true,
       "documentTypeName": "Portfolio"
     },
@@ -91,8 +91,8 @@
           "_raw": {}
         },
         "body": {
-          "raw": "undefined",
-          "html": "<p>undefined</p>"
+          "raw": "\nContent",
+          "html": "<p>Content</p>"
         },
         "_id": "portfolio/test-project.md",
         "_raw": {
@@ -104,7 +104,7 @@
         },
         "type": "Portfolio"
       },
-      "documentHash": "1715660437726",
+      "documentHash": "1715660777252",
       "hasWarnings": true,
       "documentTypeName": "Portfolio"
     },

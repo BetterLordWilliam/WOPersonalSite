@@ -16,8 +16,8 @@
       "_raw": {}
     },
     "body": {
-      "raw": "undefined",
-      "html": "<p>undefined</p>"
+      "raw": "\nContent",
+      "html": "<p>Content</p>"
     },
     "_id": "portfolio/test-project-1.md",
     "_raw": {
@@ -47,8 +47,8 @@
       "_raw": {}
     },
     "body": {
-      "raw": "undefined",
-      "html": "<p>undefined</p>"
+      "raw": "\nContent",
+      "html": "<p>Content</p>"
     },
     "_id": "portfolio/test-project-2.md",
     "_raw": {
@@ -79,8 +79,8 @@
       "_raw": {}
     },
     "body": {
-      "raw": "undefined",
-      "html": "<p>undefined</p>"
+      "raw": "\nContent",
+      "html": "<p>Content</p>"
     },
     "_id": "portfolio/test-project.md",
     "_raw": {
