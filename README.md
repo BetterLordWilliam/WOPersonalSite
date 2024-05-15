@@ -12,17 +12,22 @@ My website where I will showcase my content (professional and otherwise) to the 
 
 ## TO-DO
 
-- [ ] Create notion documents for personal projects
-- [ ] Portfolio Page
-    - [ ] Create the page features
-    - [ ] Test the page and features
-    - [ ] Style the page
-- [ ] Contact Page
+- Create notion documents for project portfolios
+    - [ ] KeyFinder
+    - [ ] HowRu (academic)
+    - [ ] Game of Life (academic)
+    - [ ] This website
+- Portfolio Page
+    - [X] Create the page features
+    - [X] Test the page and features
+    - [X] Style the page
+- Contact Page
     - [ ] Create the page features
     - [ ] Test the page features
     - [ ] Style the page 
-- [ ] Landing Page
+- Landing Page
+    - [ ] Navbar for the entire site (maybe should have been first...) 
     - [ ] Create the page features
     - [ ] Test the page features
     - [ ] Style the page
-- [ ] Hobby Zone... (detail later)
+- Hobby Zone... (detail later)
