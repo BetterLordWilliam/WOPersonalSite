@@ -14,8 +14,8 @@ My website where I will showcase my content (professional and otherwise) to the 
 
 - [ ] Create notion documents for personal projects
 - [ ] Portfolio Page
-    - [ ] Create the page features
-    - [ ] Test the page and features
+    - [X] Create the page features
+    - [X] Test the page and features
     - [ ] Style the page
 - [ ] Contact Page
     - [ ] Create the page features
