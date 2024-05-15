@@ -7,9 +7,13 @@
     "Test",
     "Test1",
     "Test2",
-    "Test3"
+    "Test3",
+    "Test4",
+    "Test5",
+    "Test6"
   ],
   "enabled": true,
+  "repo": "https://github.com/BetterLordWilliam/WOPersonalSite/tree/PortfolioPage",
   "image": {
     "src": "/images/portfolio/addict.png",
     "width": 288,
@@ -18,8 +22,8 @@
     "_raw": {}
   },
   "body": {
-    "raw": "\nContent",
-    "html": "<p>Content</p>"
+    "raw": "undefined",
+    "html": "<p>undefined</p>"
   },
   "_id": "portfolio/test-project.md",
   "_raw": {

@@ -17,8 +17,8 @@
       "_raw": {}
     },
     "body": {
-      "raw": "\nContent",
-      "html": "<p>Content</p>"
+      "raw": "undefined",
+      "html": "<p>undefined</p>"
     },
     "_id": "portfolio/test-project-1.md",
     "_raw": {
@@ -33,7 +33,7 @@
   {
     "title": "Test Project 2",
     "date": "2024-05-15T00:00:00.000Z",
-    "slug": "test-project-2",
+    "slug": "test-project-",
     "notionId": "65ebc367-a96d-4ecc-8870-0ea8053d858b",
     "tags": [
       "Test3",
@@ -49,8 +49,8 @@
       "_raw": {}
     },
     "body": {
-      "raw": "\nContent",
-      "html": "<p>Content</p>"
+      "raw": "undefined",
+      "html": "<p>undefined</p>"
     },
     "_id": "portfolio/test-project-2.md",
     "_raw": {
@@ -71,6 +71,7 @@
       "Test1"
     ],
     "enabled": true,
+    "repo": "Test Project 3: Even more fantastic content in a new project that was so much fun to make",
     "image": {
       "src": "/images/portfolio/Budai.png",
       "width": 381,
@@ -79,8 +80,8 @@
       "_raw": {}
     },
     "body": {
-      "raw": "mega undefined",
-      "html": "<p>mega undefined</p>"
+      "raw": "undefined",
+      "html": "<p>undefined</p>"
     },
     "_id": "portfolio/test-project-3.md",
     "_raw": {
@@ -101,9 +102,13 @@
       "Test",
       "Test1",
       "Test2",
-      "Test3"
+      "Test3",
+      "Test4",
+      "Test5",
+      "Test6"
     ],
     "enabled": true,
+    "repo": "https://github.com/BetterLordWilliam/WOPersonalSite/tree/PortfolioPage",
     "image": {
       "src": "/images/portfolio/addict.png",
       "width": 288,
@@ -112,8 +117,8 @@
       "_raw": {}
     },
     "body": {
-      "raw": "\nContent",
-      "html": "<p>Content</p>"
+      "raw": "undefined",
+      "html": "<p>undefined</p>"
     },
     "_id": "portfolio/test-project.md",
     "_raw": {
@@ -122,33 +127,6 @@
       "sourceFileDir": "portfolio",
       "contentType": "markdown",
       "flattenedPath": "portfolio/test-project"
-    },
-    "type": "Portfolio"
-  },
-  {
-    "title": "Test Portfolio 1\r",
-    "date": "2024-05-11T00:00:00.000Z",
-    "slug": "testportfolio1",
-    "tags": [],
-    "enabled": false,
-    "image": {
-      "src": "/images/portfolio/doom.jpg",
-      "width": 1920,
-      "height": 1080,
-      "type": "Image",
-      "_raw": {}
-    },
-    "body": {
-      "raw": "super test",
-      "html": "<p>super test</p>"
-    },
-    "_id": "portfolio/test1.md",
-    "_raw": {
-      "sourceFilePath": "portfolio/test1.md",
-      "sourceFileName": "test1.md",
-      "sourceFileDir": "portfolio",
-      "contentType": "markdown",
-      "flattenedPath": "portfolio/test1"
     },
     "type": "Portfolio"
   },
@@ -176,6 +154,33 @@
       "sourceFileDir": "portfolio",
       "contentType": "markdown",
       "flattenedPath": "portfolio/test"
+    },
+    "type": "Portfolio"
+  },
+  {
+    "title": "Test Portfolio 1\r",
+    "date": "2024-05-11T00:00:00.000Z",
+    "slug": "testportfolio1",
+    "tags": [],
+    "enabled": false,
+    "image": {
+      "src": "/images/portfolio/doom.jpg",
+      "width": 1920,
+      "height": 1080,
+      "type": "Image",
+      "_raw": {}
+    },
+    "body": {
+      "raw": "super test",
+      "html": "<p>super test</p>"
+    },
+    "_id": "portfolio/test1.md",
+    "_raw": {
+      "sourceFilePath": "portfolio/test1.md",
+      "sourceFileName": "test1.md",
+      "sourceFileDir": "portfolio",
+      "contentType": "markdown",
+      "flattenedPath": "portfolio/test1"
     },
     "type": "Portfolio"
   }

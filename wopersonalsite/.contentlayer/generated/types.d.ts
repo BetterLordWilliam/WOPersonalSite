@@ -17,8 +17,10 @@ export type Portfolio = {
   date: IsoDateTimeString
   slug: string
   notionId?: string | undefined
-  tags?: string[] | undefined
+  tags: string[]
   enabled?: boolean | undefined
+  repo?: string | undefined
+  hostedLink?: string | undefined
   image: Image
   /** Markdown file body */
   body: Markdown

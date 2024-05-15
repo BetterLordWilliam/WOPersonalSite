@@ -7,6 +7,7 @@
     "Test1"
   ],
   "enabled": true,
+  "repo": "Test Project 3: Even more fantastic content in a new project that was so much fun to make",
   "image": {
     "src": "/images/portfolio/Budai.png",
     "width": 381,
@@ -15,8 +16,8 @@
     "_raw": {}
   },
   "body": {
-    "raw": "mega undefined",
-    "html": "<p>mega undefined</p>"
+    "raw": "undefined",
+    "html": "<p>undefined</p>"
   },
   "_id": "portfolio/test-project-3.md",
   "_raw": {

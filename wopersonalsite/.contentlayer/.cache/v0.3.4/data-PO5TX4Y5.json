@@ -11,6 +11,7 @@
           "Test1"
         ],
         "enabled": true,
+        "desc": "Test Project 1: Another great project that was lots of fun.",
         "image": {
           "src": "/images/portfolio/drangh.png",
           "width": 138,
@@ -32,7 +33,7 @@
         },
         "type": "Portfolio"
       },
-      "documentHash": "1715729316744",
+      "documentHash": "1715729466466",
       "hasWarnings": true,
       "documentTypeName": "Portfolio"
     },
@@ -48,6 +49,7 @@
           "Test2"
         ],
         "enabled": true,
+        "desc": "Test Project 2: Yet more fantastic content in another great project",
         "image": {
           "src": "/images/portfolio/Demon rat.png",
           "width": 231,
@@ -69,7 +71,7 @@
         },
         "type": "Portfolio"
       },
-      "documentHash": "1715729316804",
+      "documentHash": "1715729466822",
       "hasWarnings": true,
       "documentTypeName": "Portfolio"
     },
@@ -83,6 +85,7 @@
           "Test1"
         ],
         "enabled": true,
+        "desc": "Test Project 3: Even more fantastic content in a new project that was so much fun to make",
         "image": {
           "src": "/images/portfolio/Budai.png",
           "width": 381,
@@ -104,7 +107,7 @@
         },
         "type": "Portfolio"
       },
-      "documentHash": "1715729316665",
+      "documentHash": "1715729465948",
       "hasWarnings": true,
       "documentTypeName": "Portfolio"
     },
@@ -121,6 +124,7 @@
           "Test3"
         ],
         "enabled": true,
+        "desc": "Test Project: A great project.",
         "image": {
           "src": "/images/portfolio/addict.png",
           "width": 288,
@@ -129,8 +133,8 @@
           "_raw": {}
         },
         "body": {
-          "raw": "undefined",
-          "html": "<p>undefined</p>"
+          "raw": "A fantastic project",
+          "html": "<p>A fantastic project</p>"
         },
         "_id": "portfolio/test-project.md",
         "_raw": {
@@ -142,7 +146,7 @@
         },
         "type": "Portfolio"
       },
-      "documentHash": "1715729317078",
+      "documentHash": "1715733240039",
       "hasWarnings": true,
       "documentTypeName": "Portfolio"
     },

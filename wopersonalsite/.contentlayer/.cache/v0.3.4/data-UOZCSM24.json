@@ -32,7 +32,7 @@
         },
         "type": "Portfolio"
       },
-      "documentHash": "1715729316744",
+      "documentHash": "1715738435170",
       "hasWarnings": true,
       "documentTypeName": "Portfolio"
     },
@@ -40,7 +40,7 @@
       "document": {
         "title": "Test Project 2",
         "date": "2024-05-15T00:00:00.000Z",
-        "slug": "test-project-2",
+        "slug": "test-project-",
         "notionId": "65ebc367-a96d-4ecc-8870-0ea8053d858b",
         "tags": [
           "Test3",
@@ -69,7 +69,7 @@
         },
         "type": "Portfolio"
       },
-      "documentHash": "1715729316804",
+      "documentHash": "1715738463482",
       "hasWarnings": true,
       "documentTypeName": "Portfolio"
     },
@@ -83,6 +83,7 @@
           "Test1"
         ],
         "enabled": true,
+        "repo": "Test Project 3: Even more fantastic content in a new project that was so much fun to make",
         "image": {
           "src": "/images/portfolio/Budai.png",
           "width": 381,
@@ -104,7 +105,7 @@
         },
         "type": "Portfolio"
       },
-      "documentHash": "1715729316665",
+      "documentHash": "1715733590341",
       "hasWarnings": true,
       "documentTypeName": "Portfolio"
     },
@@ -118,9 +119,13 @@
           "Test",
           "Test1",
           "Test2",
-          "Test3"
+          "Test3",
+          "Test4",
+          "Test5",
+          "Test6"
         ],
         "enabled": true,
+        "repo": "https://github.com/BetterLordWilliam/WOPersonalSite/tree/PortfolioPage",
         "image": {
           "src": "/images/portfolio/addict.png",
           "width": 288,
@@ -142,7 +147,7 @@
         },
         "type": "Portfolio"
       },
-      "documentHash": "1715729317078",
+      "documentHash": "1715738753357",
       "hasWarnings": true,
       "documentTypeName": "Portfolio"
     },

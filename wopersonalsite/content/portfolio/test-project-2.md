@@ -13,8 +13,7 @@ image:
 location: Somewhere
 enabled: true
 title: Test Project 2
-slug: test-project-2
+slug: test-project-
 
 ---
-
-Content
+undefined
