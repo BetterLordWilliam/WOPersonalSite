@@ -5,6 +5,7 @@
 - Create the slug page features
     - [X] Tags display at the top
     - [X] External links at the bottom (github or hosted)
+    - [ ] Make the external links components
     - [ ] Restrict image size (?) --> wait until proper Notion content is created
 - Test the page and features
     - [X] Unavaliable links grey (unclickable)
