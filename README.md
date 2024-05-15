@@ -1,28 +1,18 @@
-# Personal Website
-
-**Hosted Link** : ⏳ `coming soon` ⌛
-
-My website where I will showcase my content (professional and otherwise) to the world.
-
-## Tech Stack
-- :computer: NextJS
-- :tada: Tailwindcss
-- :floppy_disk: Notion
-- :minidisc: Pocketbase DB
+# Portfolio Page
 
 ## TO-DO
 
-- [ ] Create notion documents for personal projects
-- [ ] Portfolio Page
-    - [X] Create the page features
-    - [X] Test the page and features
-    - [ ] Style the page
-- [ ] Contact Page
-    - [ ] Create the page features
-    - [ ] Test the page features
-    - [ ] Style the page 
-- [ ] Landing Page
-    - [ ] Create the page features
-    - [ ] Test the page features
-    - [ ] Style the page
-- [ ] Hobby Zone... (detail later)
+- Create the slug page features
+    - [X] Tags display at the top
+    - [X] External links at the bottom (github or hosted)
+    - [ ] Restrict image size (?) --> wait until proper Notion content is created
+- Test the page and features
+    - [X] Unavaliable links grey (unclickable)
+    - [X] Style issues with the tags (flowing off the screen on phone view)  
+- Style the page
+    - [X] Nice tag bar and tag colours
+    - [X] Nice external link bar and external link colours
+    - [ ] Background colour for the portfolio text
+    - [ ] Image background / border effect(s)
+    - [ ] Link hover effects (bigger)
+    - Not really sure what else could be styled... 
