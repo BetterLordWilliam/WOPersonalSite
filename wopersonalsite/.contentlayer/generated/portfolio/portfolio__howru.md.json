@@ -1,0 +1,37 @@
+{
+  "title": "HowRu",
+  "startDate": "2023-09-05T00:00:00.000Z",
+  "endDate": "2023-12-19T00:00:00.000Z",
+  "slug": "howru",
+  "notionId": "5575352a-f8da-4f07-93e8-2b9a987a5944",
+  "tags": [
+    "Firebase",
+    "JavaScript",
+    "HTML",
+    "CSS",
+    "MapBox"
+  ],
+  "enabled": true,
+  "repo": "https://github.com/rraymondx/1800_202330_BBY25",
+  "hostedLink": "https://howru2-fcdff.web.app/",
+  "image": {
+    "src": "/images/portfolio/HowRu.png",
+    "width": 1200,
+    "height": 1200,
+    "type": "Image",
+    "_raw": {}
+  },
+  "body": {
+    "raw": "undefined",
+    "html": "<p>undefined</p>"
+  },
+  "_id": "portfolio/howru.md",
+  "_raw": {
+    "sourceFilePath": "portfolio/howru.md",
+    "sourceFileName": "howru.md",
+    "sourceFileDir": "portfolio",
+    "contentType": "markdown",
+    "flattenedPath": "portfolio/howru"
+  },
+  "type": "Portfolio"
+}

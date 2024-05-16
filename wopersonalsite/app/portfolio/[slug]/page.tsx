@@ -1,10 +1,10 @@
-import { Portfolio, allPortfolios } from "contentlayer/generated";
-import { notFound } from "next/navigation";
-
 import Image from "next/image";
 import Link from "next/link";
+
 import { PortfolioTag } from "../../../components/PortfolioTag";
 import { RegularButton } from "../../../components/RegularButton"; // to be used in the furture, trust me...
+import { Portfolio, allPortfolios } from "contentlayer/generated";
+import { notFound } from "next/navigation";
 
 interface Params {
     params: {
@@ -12,6 +12,12 @@ interface Params {
     }
 }
 
+/**
+ * Page:            Takes parameter which is the slug of the card who's info we will display, displays
+ * 
+ * @param slug:     String, the slug value of the portfolio information we will display
+ * @returns         NextPage
+ */
 const Page:React.FC<Params> = ({params: {slug}}) => {
     //console.log(allPortfolios);
     const item = allPortfolios.find((item) => item.slug === slug);
@@ -23,11 +29,13 @@ const Page:React.FC<Params> = ({params: {slug}}) => {
     };
 
     // Default content return
-    return <div className="mb-8 p-4 mx-auto max-w-4xl">
-        <h1 className="py-4 font-bold text-3xl">{item?.title}</h1>
+    return <div className="p-4 mx-auto max-w-4xl">
+        <div className="flex justify-center">
+            <h1 className="font-bold text-3xl">{item?.title}</h1>
+        </div>
 
-        <div className="rounded bg-slate-900 flex flex-direction-row flex-wrap my-4 p-4">
-            <div className="p-1"> Techstack </div>
+        <div className="rounded bg-zinc-800 flex flex-direction-row flex-wrap my-4 p-2">
+            <div className="p-2"> Techstack </div>
             {item.tags.map((thisTag) => {
                 return (
                     <div className="inline p-1">
@@ -36,27 +44,24 @@ const Page:React.FC<Params> = ({params: {slug}}) => {
                 );
             })}
         </div>
+            
 
         <Image className="w-full"
             src={item?.image.src} 
             alt={item?.title} 
             width={item?.image.width} 
             height={item?.image.height}/>
-
         <div 
-            className="pt-8 pb-2"
+            className="pt-8 pb-4"
             dangerouslySetInnerHTML={ {__html: item.body.html} }/>
-
-        <div className="rounded bg-slate-900 flex my-4 p-4">
-            {item.repo ? (
-                <Link className="rounded mx-2 p-1 bg-slate-950" href={item.repo}>GitHub Repository</Link>
-            ) : <span className="rounded mx-2 p-1 bg-slate-950 text-gray-500">GitHub Repository (Not Available)</span>}
-            {item.hostedLink ? (
-                <Link className="rounded mx-2 p-1 bg-slate-950" href={item.hostedLink}>Hosted Link</Link> 
-            ): <span className="rounded mx-2 p-1 bg-slate-950 text-gray-500">Hosted Link (Not Available)</span>}
+        <div className="rounded bg-zinc-800 flex my-2 p-2">
+            <RegularButton url={item.repo} buttonText="Github"></RegularButton>
+            <RegularButton url={item.hostedLink} buttonText="Hosted Link"></RegularButton>
         </div>
 
+        <div className="pt-2 pb-4 flex justify-center">
         <Link className="block text-blue-500" href="/portfolio"> go pack to portfolio </Link>
+        </div>
 
     </div>
 }

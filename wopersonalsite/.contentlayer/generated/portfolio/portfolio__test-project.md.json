@@ -22,8 +22,8 @@
     "_raw": {}
   },
   "body": {
-    "raw": "undefined",
-    "html": "<p>undefined</p>"
+    "raw": "undefined\n# Test Header #\n\nSome text\nLots of text, so much text.\n\n## Test Third Level Header ##\n\nEven more text, haha, text, so much fun.\n\n",
+    "html": "<p>undefined</p>\n<h1>Test Header</h1>\n<p>Some text\nLots of text, so much text.</p>\n<h2>Test Third Level Header</h2>\n<p>Even more text, haha, text, so much fun.</p>"
   },
   "_id": "portfolio/test-project.md",
   "_raw": {

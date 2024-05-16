@@ -1,7 +1,8 @@
 ---
 notionId: 65ebc367-a96d-4ecc-8870-0ea8053d858b
 type: Portfolio
-date: 2024-05-15
+startDate: 2024-05-15
+repo: "Test Project 2: Yet more fantastic content in another great project"
 tags:
   - Test3
   - Test
@@ -11,9 +12,9 @@ image:
   width: 231
   height: 185
 location: Somewhere
-enabled: true
+enabled: false
 title: Test Project 2
-slug: test-project-
+slug: test-project-2
 
 ---
 undefined

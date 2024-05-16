@@ -1,3 +1,5 @@
+import "../styles/globals.css";
+
 interface PortfolioTagProps {
     tag: string,
 }
@@ -10,7 +12,7 @@ interface PortfolioTagProps {
  */
 export const PortfolioTag: React.FC<PortfolioTagProps> = ({tag}) => {
     return (
-        <div className="rounded p-1 bg-slate-950">
+        <div className="rounded p-1 bg-zinc-900">
         {tag}
         </div>
     );

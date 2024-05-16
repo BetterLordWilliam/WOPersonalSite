@@ -7,7 +7,6 @@
     "Test1"
   ],
   "enabled": true,
-  "repo": "Test Project 3: Even more fantastic content in a new project that was so much fun to make",
   "image": {
     "src": "/images/portfolio/Budai.png",
     "width": 381,
@@ -16,8 +15,8 @@
     "_raw": {}
   },
   "body": {
-    "raw": "undefined",
-    "html": "<p>undefined</p>"
+    "raw": "\n# Test Header #\n\nSome text\nLots of text, so much text.\n\n## Test Third Level Header ##\n\nEven more text, haha, text, so much fun.\n",
+    "html": "<h1>Test Header</h1>\n<p>Some text\nLots of text, so much text.</p>\n<h2>Test Third Level Header</h2>\n<p>Even more text, haha, text, so much fun.</p>"
   },
   "_id": "portfolio/test-project-3.md",
   "_raw": {

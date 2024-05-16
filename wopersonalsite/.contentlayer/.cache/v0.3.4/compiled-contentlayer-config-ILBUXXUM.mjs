@@ -13,7 +13,8 @@ var Portfolio = defineDocumentType(() => ({
   filePathPattern: "portfolio/*.md",
   fields: {
     title: { type: "string", required: true },
-    date: { type: "date", required: true },
+    startDate: { type: "date", required: true },
+    endDate: { type: "date", required: true },
     slug: { type: "string", required: true },
     notionId: { type: "string", required: false },
     tags: { type: "list", of: { type: "string" }, required: true },
@@ -32,4 +33,4 @@ export {
   Portfolio,
   contentlayer_config_default as default
 };
-//# sourceMappingURL=compiled-contentlayer-config-UOZCSM24.mjs.map
+//# sourceMappingURL=compiled-contentlayer-config-ILBUXXUM.mjs.map

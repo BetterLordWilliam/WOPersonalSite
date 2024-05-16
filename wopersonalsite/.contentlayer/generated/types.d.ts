@@ -14,7 +14,8 @@ export type Portfolio = {
   _raw: Local.RawDocumentData
   type: 'Portfolio'
   title: string
-  date: IsoDateTimeString
+  startDate: IsoDateTimeString
+  endDate: IsoDateTimeString
   slug: string
   notionId?: string | undefined
   tags: string[]
