@@ -1,0 +1,120 @@
+{
+  "cacheItemsMap": {
+    "portfolio/howru.md": {
+      "document": {
+        "title": "HowRu",
+        "startDate": "2023-09-05T00:00:00.000Z",
+        "endDate": "2023-12-19T00:00:00.000Z",
+        "slug": "howru",
+        "notionId": "5575352a-f8da-4f07-93e8-2b9a987a5944",
+        "tags": [
+          "Firebase",
+          "JavaScript",
+          "HTML",
+          "CSS",
+          "MapBox"
+        ],
+        "enabled": true,
+        "repo": "https://github.com/rraymondx/1800_202330_BBY25",
+        "try": "https://howru2-fcdff.web.app/",
+        "image": {
+          "src": "/images/portfolio/HowRu.png",
+          "width": 1200,
+          "height": 1200,
+          "type": "Image",
+          "_raw": {}
+        },
+        "body": {
+          "raw": "\n## About the Project\n\nHowRu is a mental health focused social media app. The app provides users with a means of achieving genuine connections with people in their community with features such as localised posting and a built-in messaging feature.\n\nThe idea stemmed from my group's concern about the well-observed decline in the mental health of younger people, who have all grown up on social media. Our research into the matter has revealed that people growing up in this digital age face more anxiety and stress compared to past generations. Part of the problem was revealed to be society's reliance on social media for digital communication.\n\nIt has been demonstrated that social media can, and does, have a negative impact on the mental health of people if used in an unhealthy way. So, my group sought to address these issues by creating a new kind of social media app, one that promotes positive interactions between people who live amongst a community. \n\nOur vision was that HowRu serves as a bridge back into the past by providing the denizens of the internet with the authentic community-centred experience of the past while maintaining the convenience and speed of digital communication.\n\n## How to Visit\n\nUse the link at the bottom of the page to access the hosted webapp!\n\nYou will need to create an account before you can access HowRu and experience the app for yourself.\n\n## Contributors\n\nHowRu was developed by first semester BCIT students Bavneet Dhillon, Raymond Xie, and Will Otterbein (me).",
+          "html": "<h2>About the Project</h2>\n<p>HowRu is a mental health focused social media app. The app provides users with a means of achieving genuine connections with people in their community with features such as localised posting and a built-in messaging feature.</p>\n<p>The idea stemmed from my group's concern about the well-observed decline in the mental health of younger people, who have all grown up on social media. Our research into the matter has revealed that people growing up in this digital age face more anxiety and stress compared to past generations. Part of the problem was revealed to be society's reliance on social media for digital communication.</p>\n<p>It has been demonstrated that social media can, and does, have a negative impact on the mental health of people if used in an unhealthy way. So, my group sought to address these issues by creating a new kind of social media app, one that promotes positive interactions between people who live amongst a community.</p>\n<p>Our vision was that HowRu serves as a bridge back into the past by providing the denizens of the internet with the authentic community-centred experience of the past while maintaining the convenience and speed of digital communication.</p>\n<h2>How to Visit</h2>\n<p>Use the link at the bottom of the page to access the hosted webapp!</p>\n<p>You will need to create an account before you can access HowRu and experience the app for yourself.</p>\n<h2>Contributors</h2>\n<p>HowRu was developed by first semester BCIT students Bavneet Dhillon, Raymond Xie, and Will Otterbein (me).</p>"
+        },
+        "_id": "portfolio/howru.md",
+        "_raw": {
+          "sourceFilePath": "portfolio/howru.md",
+          "sourceFileName": "howru.md",
+          "sourceFileDir": "portfolio",
+          "contentType": "markdown",
+          "flattenedPath": "portfolio/howru"
+        },
+        "type": "Portfolio"
+      },
+      "documentHash": "1715980858678",
+      "hasWarnings": false,
+      "documentTypeName": "Portfolio"
+    },
+    "portfolio/keyfinder.md": {
+      "document": {
+        "title": "KeyFinder",
+        "startDate": "2022-12-18T00:00:00.000Z",
+        "endDate": "2023-03-14T00:00:00.000Z",
+        "slug": "keyfinder",
+        "notionId": "e74d6d0d-b13b-465a-be41-bdb21291b6ec",
+        "tags": [
+          "Java"
+        ],
+        "enabled": true,
+        "repo": "https://github.com/BetterLordWilliam/KeyFinder",
+        "image": {
+          "src": "/images/portfolio/KeyFinder.png",
+          "width": 1200,
+          "height": 1200,
+          "type": "Image",
+          "_raw": {}
+        },
+        "body": {
+          "raw": "\n## About the Project\n\nKeyFinder was a game that I created with Java back during the end of 2022 and during the start of 2023. The project took approximately 3 months to fully complete due to a busy school schedule, but in March of 2023 I made the last official changes.\n\nThe creation of this game was an exercise in object-oriented design as well as a test of my knowledge of programming concepts such as recursion.\n\n## What to do\n\nIn the KeyFinder game you are the key finder, a character who must collect keys to open locked doors and access the final purple chest of each level. There are four levels in total each containing three to four different keys.   \n\nTo control the player, simply use the WASD keys. The player has the ability to sprint, this can be done by pressing the space key while moving. At anytime, the game can be quit by pressing the escape key. \nTo see these controls ingame, press the 'r' key.  \n\nThe levels are labrynthian in nature, inspired by the old-school gameplay to be found in titles such as Wolfenstein and Doom.\nUnfortunately, there are no enemies to defeat in KeyFinder, the only contest is the one going on inside your mind as you navigate the levels eagerly seaking keys.   \n\nOnce you reach the final level and unlock the last chest, you will have successfully completed the game. Congratulations! From here you are free to play again by pressing 'enter' or quit the game by pressing the 'esc' key.   \n\n## How to Run\n\nVisit the links bar at the bottom of this page to find a link which will take you to a download mirror. Enjoy!\n\n*Java is required to be able to run this project.*\n\n\n",
+          "html": "<h2>About the Project</h2>\n<p>KeyFinder was a game that I created with Java back during the end of 2022 and during the start of 2023. The project took approximately 3 months to fully complete due to a busy school schedule, but in March of 2023 I made the last official changes.</p>\n<p>The creation of this game was an exercise in object-oriented design as well as a test of my knowledge of programming concepts such as recursion.</p>\n<h2>What to do</h2>\n<p>In the KeyFinder game you are the key finder, a character who must collect keys to open locked doors and access the final purple chest of each level. There are four levels in total each containing three to four different keys.</p>\n<p>To control the player, simply use the WASD keys. The player has the ability to sprint, this can be done by pressing the space key while moving. At anytime, the game can be quit by pressing the escape key.\nTo see these controls ingame, press the 'r' key.</p>\n<p>The levels are labrynthian in nature, inspired by the old-school gameplay to be found in titles such as Wolfenstein and Doom.\nUnfortunately, there are no enemies to defeat in KeyFinder, the only contest is the one going on inside your mind as you navigate the levels eagerly seaking keys.</p>\n<p>Once you reach the final level and unlock the last chest, you will have successfully completed the game. Congratulations! From here you are free to play again by pressing 'enter' or quit the game by pressing the 'esc' key.</p>\n<h2>How to Run</h2>\n<p>Visit the links bar at the bottom of this page to find a link which will take you to a download mirror. Enjoy!</p>\n<p><em>Java is required to be able to run this project.</em></p>"
+        },
+        "_id": "portfolio/keyfinder.md",
+        "_raw": {
+          "sourceFilePath": "portfolio/keyfinder.md",
+          "sourceFileName": "keyfinder.md",
+          "sourceFileDir": "portfolio",
+          "contentType": "markdown",
+          "flattenedPath": "portfolio/keyfinder"
+        },
+        "type": "Portfolio"
+      },
+      "documentHash": "1715980422688",
+      "hasWarnings": false,
+      "documentTypeName": "Portfolio"
+    },
+    "portfolio/the-game-of-life.md": {
+      "document": {
+        "title": "The Game of Life",
+        "startDate": "2024-02-20T00:00:00.000Z",
+        "endDate": "2024-04-21T00:00:00.000Z",
+        "slug": "the-game-of-life",
+        "notionId": "c4718d36-59a2-4a4e-b3a1-6bf81343f793",
+        "tags": [
+          "Java"
+        ],
+        "enabled": true,
+        "repo": "https://github.com/BetterLordWilliam/COMP2522_Assignment2",
+        "image": {
+          "src": "/images/portfolio/GameOfLife.png",
+          "width": 1200,
+          "height": 1200,
+          "type": "Image",
+          "_raw": {}
+        },
+        "body": {
+          "raw": "\n## About the Project\n\nThe Game of Life was an assignment created with Java during my second semester at BCIT. The project was completed over approximately 1 month and was composed of several smaller assignments.\n\nThe creation of this game was an exercise in object-oriented design and was assessed with the Object-Oriented programming paradigm in mind by my course instructors, who awarded the final project a 100% score.\n\nThis program is a very simple simulation of life. There are four types of life forms which populate the board. These life forms are: Plants, Herbivores, Carnivores and Omnivores.\n\nAs might be guessed, Herbivores eat Plants, Carnivores eat herbivores, and Omnivores eat Plants. All organisms can breed, given that their unique requirements for empty space and breeding partners are met.\n\nIf you are curious as to the inner workings of The Game of Life, please view the source code via the GitHub link at the bottom of the page.\n\n## How to Run\n\nVisit the links bar at the bottom of this page to find a link which will take you to a download mirror. Enjoy!\n\n*Java is required to be able to run this project.*",
+          "html": "<h2>About the Project</h2>\n<p>The Game of Life was an assignment created with Java during my second semester at BCIT. The project was completed over approximately 1 month and was composed of several smaller assignments.</p>\n<p>The creation of this game was an exercise in object-oriented design and was assessed with the Object-Oriented programming paradigm in mind by my course instructors, who awarded the final project a 100% score.</p>\n<p>This program is a very simple simulation of life. There are four types of life forms which populate the board. These life forms are: Plants, Herbivores, Carnivores and Omnivores.</p>\n<p>As might be guessed, Herbivores eat Plants, Carnivores eat herbivores, and Omnivores eat Plants. All organisms can breed, given that their unique requirements for empty space and breeding partners are met.</p>\n<p>If you are curious as to the inner workings of The Game of Life, please view the source code via the GitHub link at the bottom of the page.</p>\n<h2>How to Run</h2>\n<p>Visit the links bar at the bottom of this page to find a link which will take you to a download mirror. Enjoy!</p>\n<p><em>Java is required to be able to run this project.</em></p>"
+        },
+        "_id": "portfolio/the-game-of-life.md",
+        "_raw": {
+          "sourceFilePath": "portfolio/the-game-of-life.md",
+          "sourceFileName": "the-game-of-life.md",
+          "sourceFileDir": "portfolio",
+          "contentType": "markdown",
+          "flattenedPath": "portfolio/the-game-of-life"
+        },
+        "type": "Portfolio"
+      },
+      "documentHash": "1715980402109",
+      "hasWarnings": false,
+      "documentTypeName": "Portfolio"
+    }
+  }
+}

@@ -3,6 +3,7 @@
   "date": "2024-05-11T00:00:00.000Z",
   "slug": "testportfolio",
   "tags": [],
+  "enabled": false,
   "image": {
     "src": "/images/portfolio/Templar.png",
     "width": 563,

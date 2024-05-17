@@ -14,10 +14,14 @@ export type Portfolio = {
   _raw: Local.RawDocumentData
   type: 'Portfolio'
   title: string
-  date: IsoDateTimeString
+  startDate: IsoDateTimeString
+  endDate: IsoDateTimeString
   slug: string
   notionId?: string | undefined
-  tags?: string[] | undefined
+  tags: string[]
+  enabled?: boolean | undefined
+  repo?: string | undefined
+  try?: string | undefined
   image: Image
   /** Markdown file body */
   body: Markdown

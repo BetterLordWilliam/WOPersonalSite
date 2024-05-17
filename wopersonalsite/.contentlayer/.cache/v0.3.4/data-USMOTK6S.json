@@ -17,6 +17,7 @@
           "type": "Image",
           "_raw": {}
         },
+        "enabled": true,
         "body": {
           "raw": "\nContent",
           "html": "<p>Content</p>"
@@ -53,6 +54,7 @@
           "type": "Image",
           "_raw": {}
         },
+        "enabled": true,
         "body": {
           "raw": "\nContent",
           "html": "<p>Content</p>"
@@ -90,6 +92,7 @@
           "type": "Image",
           "_raw": {}
         },
+        "enabled": true,
         "body": {
           "raw": "\nContent",
           "html": "<p>Content</p>"
@@ -108,66 +111,39 @@
       "hasWarnings": true,
       "documentTypeName": "Portfolio"
     },
-    "portfolio/test.md": {
+    "portfolio/test-project-3.md": {
       "document": {
-        "title": "Test Portfolio\r",
-        "date": "2024-05-11T00:00:00.000Z",
-        "slug": "testportfolio",
-        "tags": [],
+        "title": "Test Project 3",
+        "date": "2024-05-16T00:00:00.000Z",
+        "slug": "test-project-3",
+        "notionId": "4eb1cdea-78f7-404f-8ece-03ff7d162c2c",
+        "tags": [
+          "Test1"
+        ],
         "image": {
-          "src": "/images/portfolio/Templar.png",
-          "width": 563,
-          "height": 635,
+          "src": "/images/portfolio/Budai.png",
+          "width": 381,
+          "height": 513,
           "type": "Image",
           "_raw": {}
         },
+        "enabled": false,
         "body": {
-          "raw": "\r\nTest Portfolio",
-          "html": "<p>Test Portfolio</p>"
+          "raw": "mega undefined",
+          "html": "<p>mega undefined</p>"
         },
-        "_id": "portfolio/test.md",
+        "_id": "portfolio/test-project-3.md",
         "_raw": {
-          "sourceFilePath": "portfolio/test.md",
-          "sourceFileName": "test.md",
+          "sourceFilePath": "portfolio/test-project-3.md",
+          "sourceFileName": "test-project-3.md",
           "sourceFileDir": "portfolio",
           "contentType": "markdown",
-          "flattenedPath": "portfolio/test"
+          "flattenedPath": "portfolio/test-project-3"
         },
         "type": "Portfolio"
       },
-      "documentHash": "1715642399928",
-      "hasWarnings": false,
-      "documentTypeName": "Portfolio"
-    },
-    "portfolio/test1.md": {
-      "document": {
-        "title": "Test Portfolio 1\r",
-        "date": "2024-05-11T00:00:00.000Z",
-        "slug": "testportfolio1",
-        "tags": [],
-        "image": {
-          "src": "/images/portfolio/doom.jpg",
-          "width": 1920,
-          "height": 1080,
-          "type": "Image",
-          "_raw": {}
-        },
-        "body": {
-          "raw": "super test",
-          "html": "<p>super test</p>"
-        },
-        "_id": "portfolio/test1.md",
-        "_raw": {
-          "sourceFilePath": "portfolio/test1.md",
-          "sourceFileName": "test1.md",
-          "sourceFileDir": "portfolio",
-          "contentType": "markdown",
-          "flattenedPath": "portfolio/test1"
-        },
-        "type": "Portfolio"
-      },
-      "documentHash": "1715705837703",
-      "hasWarnings": false,
+      "documentHash": "1715708563282",
+      "hasWarnings": true,
       "documentTypeName": "Portfolio"
     }
   }

@@ -1,0 +1,68 @@
+{
+  "cacheItemsMap": {
+    "portfolio/test.md": {
+      "document": {
+        "title": "Test Portfolio\r",
+        "date": "2024-05-11T00:00:00.000Z",
+        "slug": "testportfolio",
+        "tags": [],
+        "enabled": false,
+        "image": {
+          "src": "/images/portfolio/Templar.png",
+          "width": 563,
+          "height": 635,
+          "type": "Image",
+          "_raw": {}
+        },
+        "body": {
+          "raw": "\r\nTest Portfolio",
+          "html": "<p>Test Portfolio</p>"
+        },
+        "_id": "portfolio/test.md",
+        "_raw": {
+          "sourceFilePath": "portfolio/test.md",
+          "sourceFileName": "test.md",
+          "sourceFileDir": "portfolio",
+          "contentType": "markdown",
+          "flattenedPath": "portfolio/test"
+        },
+        "type": "Portfolio"
+      },
+      "documentHash": "1715708700163",
+      "hasWarnings": false,
+      "documentTypeName": "Portfolio"
+    },
+    "portfolio/test1.md": {
+      "document": {
+        "title": "Test Portfolio 1\r",
+        "date": "2024-05-11T00:00:00.000Z",
+        "slug": "testportfolio1",
+        "tags": [],
+        "enabled": false,
+        "image": {
+          "src": "/images/portfolio/doom.jpg",
+          "width": 1920,
+          "height": 1080,
+          "type": "Image",
+          "_raw": {}
+        },
+        "body": {
+          "raw": "super test",
+          "html": "<p>super test</p>"
+        },
+        "_id": "portfolio/test1.md",
+        "_raw": {
+          "sourceFilePath": "portfolio/test1.md",
+          "sourceFileName": "test1.md",
+          "sourceFileDir": "portfolio",
+          "contentType": "markdown",
+          "flattenedPath": "portfolio/test1"
+        },
+        "type": "Portfolio"
+      },
+      "documentHash": "1715708696542",
+      "hasWarnings": false,
+      "documentTypeName": "Portfolio"
+    }
+  }
+}
