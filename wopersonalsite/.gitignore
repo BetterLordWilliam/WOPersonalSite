@@ -14,7 +14,7 @@
 /out/
 
 # content layer
-/.contentlayer/
+/.contentlayer/*
 
 # production
 /build
