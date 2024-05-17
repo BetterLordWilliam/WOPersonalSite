@@ -16,6 +16,9 @@
 # content layer
 /.contentlayer/*
 
+# VS Code
+/.vscode/*
+
 # production
 /build
 
