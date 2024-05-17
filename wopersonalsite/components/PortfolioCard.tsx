@@ -9,7 +9,7 @@ interface PortfolioCardProps {
 export const PortfolioCard: React.FC<PortfolioCardProps> = ({item}) => {
     return <div className="max-w-80"><Link href={"/portfolio/"+item.slug}>
     <div>
-        <div className="m-1 p-2 hover:p-1 rounded">
+        <div className="m-1 p-3 hover:p-4 rounded">
         <div className="p-2 rounded bg-closeishToBlack">
             <Image className="rounded aspect-square object-cover" 
                 src={item.image.src} 

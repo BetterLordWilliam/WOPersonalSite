@@ -44,7 +44,6 @@ const Page:React.FC<Params> = ({params: {slug}}) => {
                 );
             })}
         </div>
-            
 
         <Image className="w-full"
             src={item?.image.src} 
@@ -52,7 +51,7 @@ const Page:React.FC<Params> = ({params: {slug}}) => {
             width={item?.image.width} 
             height={item?.image.height}/>
         <div 
-            className="pt-8 pb-4"
+            className="rounded mt-3 p-3 pb-4 bg-closeiToBlack"
             dangerouslySetInnerHTML={ {__html: item.body.html} }/>
 
         <div className="rounded bg-zinc-800 flex my-2 p-2">

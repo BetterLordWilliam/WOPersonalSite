@@ -22,12 +22,6 @@ KeyFinder was a game that I created with Java back during the end of 2022 and du
 
 The creation of this game was an exercise in object-oriented design as well as a test of my knowledge of programming concepts such as recursion.
 
-## How to Run
-
-Visit the links bar at the bottom of this page to find a link which will take you to a download mirror. Enjoy!
-
-*Java is required to be able to run this project.*
-
 ## What to do
 
 In the KeyFinder game you are the key finder, a character who must collect keys to open locked doors and access the final purple chest of each level. There are four levels in total each containing three to four different keys.   
@@ -39,4 +33,11 @@ The levels are labrynthian in nature, inspired by the old-school gameplay to be 
 Unfortunately, there are no enemies to defeat in KeyFinder, the only contest is the one going on inside your mind as you navigate the levels eagerly seaking keys.   
 
 Once you reach the final level and unlock the last chest, you will have successfully completed the game. Congratulations! From here you are free to play again by pressing 'enter' or quit the game by pressing the 'esc' key.   
+
+## How to Run
+
+Visit the links bar at the bottom of this page to find a link which will take you to a download mirror. Enjoy!
+
+*Java is required to be able to run this project.*
+
 
