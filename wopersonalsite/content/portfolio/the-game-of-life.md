@@ -15,9 +15,7 @@ title: The Game of Life
 slug: the-game-of-life
 
 ---
-
 ## About the Project
-
 The Game of Life was an assignment created with Java during my second semester at BCIT. The project was completed over approximately 1 month and was composed of several smaller assignments.
 
 The creation of this game was an exercise in object-oriented design and was assessed with the Object-Oriented programming paradigm in mind by my course instructors, who awarded the final project a 100% score.
@@ -29,7 +27,6 @@ As might be guessed, Herbivores eat Plants, Carnivores eat herbivores, and Omniv
 If you are curious as to the inner workings of The Game of Life, please view the source code via the GitHub link at the bottom of the page.
 
 ## How to Run
-
 Visit the links bar at the bottom of this page to find a link which will take you to a download mirror. Enjoy!
 
 *Java is required to be able to run this project.*

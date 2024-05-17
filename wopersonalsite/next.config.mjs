@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+    swcMinify: true,
+};
 
 import {withContentlayer} from "next-contentlayer";
 

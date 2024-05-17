@@ -20,11 +20,11 @@ interface Params {
  */
 const Page:React.FC<Params> = ({params: {slug}}) => {
     //console.log(allPortfolios);
-    const item = allPortfolios.find((item) => item.slug === slug);
+    const item = allPortfolios.find((item) => {console.log(item.slug); if (item.slug === slug) return item;});
     
     // 404 for not found item
     if (!item) {
-        //console.log("Here");
+        console.log("Here");
         notFound();
     };
 
