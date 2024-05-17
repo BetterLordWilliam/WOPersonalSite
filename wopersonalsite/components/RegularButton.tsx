@@ -21,7 +21,7 @@ export const RegularButton: React.FC<params> = ({url, buttonText}) => {
                 <Link href={url}> {buttonText} </Link>
                 </div>
             ) : 
-                <div className="rounded p-1 bg-zinc-900 hover:bg-red-900 italic">
+                <div className="rounded p-1 bg-zinc-900 hover:bg-red-900">
                 <span> {buttonText} </span>
                 </div>
             }

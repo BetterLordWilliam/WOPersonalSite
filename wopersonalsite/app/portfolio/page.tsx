@@ -9,9 +9,9 @@ import { PortfolioCard } from "@/components/PortfolioCard";
  */
 const PortfolioIndex: NextPage = () => {
     return (
-        <section className="mx-auto max-w-4xl">
-            <h1 className="py-4 text-center text-4xl font-bold">Project Portfolio page</h1>
-            <div className="p-4 grid grid-cols-3 gap-4">
+        <section className="mx-auto max-w-5xl">
+            <h1 className="pb-8 text-center text-4xl font-bold">Project Portfolios</h1>
+            <div className="pb-8 flex flex-direction-row flex-wrap justify-center gap-4">
                 {allPortfolios.map((portfolio, index) => {
                     // Use the enabled property from the Notion document
                     if (portfolio.enabled) {
