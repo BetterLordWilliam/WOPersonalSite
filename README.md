@@ -13,13 +13,13 @@ My website where I will showcase my content (professional and otherwise) to the 
 ## TO-DO
 
 - Create notion documents for project portfolios
-    - [ ] KeyFinder
-    - [ ] HowRu (academic)
-    - [ ] Game of Life (academic)
+    - [X] KeyFinder
+    - [X] HowRu (academic)
+    - [X] Game of Life (academic)
     - [ ] This website
 - Portfolio Page
-    - [ ] Create the page features
-    - [ ] Test the page and features
+    - [X] Create the page features
+    - [X] Test the page and features
     - [X] Style the page
 - Contact Page
     - [ ] Create the page features
