@@ -54,9 +54,11 @@ const Page:React.FC<Params> = ({params: {slug}}) => {
         <div 
             className="pt-8 pb-4"
             dangerouslySetInnerHTML={ {__html: item.body.html} }/>
+
         <div className="rounded bg-zinc-800 flex my-2 p-2">
+            <div className="p-2"> Links </div>
             <RegularButton url={item.repo} buttonText="Github"></RegularButton>
-            <RegularButton url={item.hostedLink} buttonText="Hosted Link"></RegularButton>
+            <RegularButton url={item.try} buttonText="Try"></RegularButton>
         </div>
 
         <div className="pt-2 pb-4 flex justify-center">

@@ -1,0 +1,120 @@
+{
+  "cacheItemsMap": {
+    "portfolio/howru.md": {
+      "document": {
+        "title": "HowRu",
+        "startDate": "2023-09-05T00:00:00.000Z",
+        "endDate": "2023-12-19T00:00:00.000Z",
+        "slug": "howru",
+        "notionId": "5575352a-f8da-4f07-93e8-2b9a987a5944",
+        "tags": [
+          "Firebase",
+          "JavaScript",
+          "HTML",
+          "CSS",
+          "MapBox"
+        ],
+        "enabled": true,
+        "repo": "https://github.com/rraymondx/1800_202330_BBY25",
+        "try": "https://howru2-fcdff.web.app/",
+        "image": {
+          "src": "/images/portfolio/HowRu.png",
+          "width": 1200,
+          "height": 1200,
+          "type": "Image",
+          "_raw": {}
+        },
+        "body": {
+          "raw": "\n## About the Project\n\nHowRu is a mental health focused social media app. The app provides users with a means of achieving genuine connections with people in their community with features such as localized posting and a built-in messaging feature.\n\n## How to Visit\n\nUse the link at the bottom of the page to access the hosted webapp!\n1. Create an account.\n2. Enjoy.\n\n## Contributors\n\nAside from myself, HowRu was developed by Bavneet Dhillon and Raymond Xie.",
+          "html": "<h2>About the Project</h2>\n<p>HowRu is a mental health focused social media app. The app provides users with a means of achieving genuine connections with people in their community with features such as localized posting and a built-in messaging feature.</p>\n<h2>How to Visit</h2>\n<p>Use the link at the bottom of the page to access the hosted webapp!</p>\n<ol>\n<li>Create an account.</li>\n<li>Enjoy.</li>\n</ol>\n<h2>Contributors</h2>\n<p>Aside from myself, HowRu was developed by Bavneet Dhillon and Raymond Xie.</p>"
+        },
+        "_id": "portfolio/howru.md",
+        "_raw": {
+          "sourceFilePath": "portfolio/howru.md",
+          "sourceFileName": "howru.md",
+          "sourceFileDir": "portfolio",
+          "contentType": "markdown",
+          "flattenedPath": "portfolio/howru"
+        },
+        "type": "Portfolio"
+      },
+      "documentHash": "1715905280472",
+      "hasWarnings": false,
+      "documentTypeName": "Portfolio"
+    },
+    "portfolio/keyfinder.md": {
+      "document": {
+        "title": "KeyFinder",
+        "startDate": "2022-12-18T00:00:00.000Z",
+        "endDate": "2023-03-14T00:00:00.000Z",
+        "slug": "keyfinder",
+        "notionId": "e74d6d0d-b13b-465a-be41-bdb21291b6ec",
+        "tags": [
+          "Java"
+        ],
+        "enabled": true,
+        "repo": "https://github.com/BetterLordWilliam/KeyFinder",
+        "image": {
+          "src": "/images/portfolio/KeyFinder.png",
+          "width": 1200,
+          "height": 1200,
+          "type": "Image",
+          "_raw": {}
+        },
+        "body": {
+          "raw": "\n## About the Project\n\nKeyFinder was a game that I created with Java back during the end of 2022 and during the start of 2023. The project took approximately 3 months to fully complete due to a busy school schedule, but in March of 2023 I made the last official changes.\n\nThe creation of this game was an exercise in object-oriented design as well as a test of my knowledge of programming concepts such as recursion.\n\n## How to Run\n\nVisit the links bar at the bottom of this page to find a link which will take you to a download mirror. Enjoy!\n\n*Java is required to be able to run this project.*\n\n## What to do\n\nIn the KeyFinder game you are the key finder, a character who must collect keys to open locked doors and access the final purple chest of each level. There are four levels in total each containing three to four different keys.   \n\nTo control the player, simply use the WASD keys. The player has the ability to sprint, this can be done by pressing the space key while moving. At anytime, the game can be quit by pressing the escape key. \nTo see these controls ingame, press the 'r' key.  \n\nThe levels are labrynthian in nature, inspired by the old-school gameplay to be found in titles such as Wolfenstein and Doom.\nUnfortunately, there are no enemies to defeat in KeyFinder, the only contest is the one going on inside your mind as you navigate the levels eagerly seaking keys.   \n\nOnce you reach the final level and unlock the last chest, you will have successfully completed the game. Congratulations! From here you are free to play again by pressing 'enter' or quit the game by pressing the 'esc' key.   \n\n",
+          "html": "<h2>About the Project</h2>\n<p>KeyFinder was a game that I created with Java back during the end of 2022 and during the start of 2023. The project took approximately 3 months to fully complete due to a busy school schedule, but in March of 2023 I made the last official changes.</p>\n<p>The creation of this game was an exercise in object-oriented design as well as a test of my knowledge of programming concepts such as recursion.</p>\n<h2>How to Run</h2>\n<p>Visit the links bar at the bottom of this page to find a link which will take you to a download mirror. Enjoy!</p>\n<p><em>Java is required to be able to run this project.</em></p>\n<h2>What to do</h2>\n<p>In the KeyFinder game you are the key finder, a character who must collect keys to open locked doors and access the final purple chest of each level. There are four levels in total each containing three to four different keys.</p>\n<p>To control the player, simply use the WASD keys. The player has the ability to sprint, this can be done by pressing the space key while moving. At anytime, the game can be quit by pressing the escape key.\nTo see these controls ingame, press the 'r' key.</p>\n<p>The levels are labrynthian in nature, inspired by the old-school gameplay to be found in titles such as Wolfenstein and Doom.\nUnfortunately, there are no enemies to defeat in KeyFinder, the only contest is the one going on inside your mind as you navigate the levels eagerly seaking keys.</p>\n<p>Once you reach the final level and unlock the last chest, you will have successfully completed the game. Congratulations! From here you are free to play again by pressing 'enter' or quit the game by pressing the 'esc' key.</p>"
+        },
+        "_id": "portfolio/keyfinder.md",
+        "_raw": {
+          "sourceFilePath": "portfolio/keyfinder.md",
+          "sourceFileName": "keyfinder.md",
+          "sourceFileDir": "portfolio",
+          "contentType": "markdown",
+          "flattenedPath": "portfolio/keyfinder"
+        },
+        "type": "Portfolio"
+      },
+      "documentHash": "1715906710385",
+      "hasWarnings": false,
+      "documentTypeName": "Portfolio"
+    },
+    "portfolio/the-game-of-life.md": {
+      "document": {
+        "title": "The Game of Life",
+        "startDate": "2024-02-20T00:00:00.000Z",
+        "endDate": "2024-04-21T00:00:00.000Z",
+        "slug": "the-game-of-life",
+        "notionId": "c4718d36-59a2-4a4e-b3a1-6bf81343f793",
+        "tags": [
+          "Java"
+        ],
+        "enabled": true,
+        "repo": "https://github.com/BetterLordWilliam/COMP2522_Assignment2",
+        "image": {
+          "src": "/images/portfolio/GameOfLife.png",
+          "width": 1200,
+          "height": 1200,
+          "type": "Image",
+          "_raw": {}
+        },
+        "body": {
+          "raw": "undefined",
+          "html": "<p>undefined</p>"
+        },
+        "_id": "portfolio/the-game-of-life.md",
+        "_raw": {
+          "sourceFilePath": "portfolio/the-game-of-life.md",
+          "sourceFileName": "the-game-of-life.md",
+          "sourceFileDir": "portfolio",
+          "contentType": "markdown",
+          "flattenedPath": "portfolio/the-game-of-life"
+        },
+        "type": "Portfolio"
+      },
+      "documentHash": "1715902830899",
+      "hasWarnings": false,
+      "documentTypeName": "Portfolio"
+    }
+  }
+}

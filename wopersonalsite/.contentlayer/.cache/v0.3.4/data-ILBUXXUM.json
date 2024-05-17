@@ -53,7 +53,6 @@
         ],
         "enabled": true,
         "repo": "https://github.com/rraymondx/1800_202330_BBY25",
-        "hostedLink": "https://howru2-fcdff.web.app/",
         "image": {
           "src": "/images/portfolio/HowRu.png",
           "width": 1200,
@@ -75,8 +74,8 @@
         },
         "type": "Portfolio"
       },
-      "documentHash": "1715820703428",
-      "hasWarnings": false,
+      "documentHash": "1715902830969",
+      "hasWarnings": true,
       "documentTypeName": "Portfolio"
     },
     "portfolio/keyfinder.md": {
@@ -112,7 +111,44 @@
         },
         "type": "Portfolio"
       },
-      "documentHash": "1715820135096",
+      "documentHash": "1715902831474",
+      "hasWarnings": false,
+      "documentTypeName": "Portfolio"
+    },
+    "portfolio/the-game-of-life.md": {
+      "document": {
+        "title": "The Game of Life",
+        "startDate": "2024-02-20T00:00:00.000Z",
+        "endDate": "2024-04-21T00:00:00.000Z",
+        "slug": "the-game-of-life",
+        "notionId": "c4718d36-59a2-4a4e-b3a1-6bf81343f793",
+        "tags": [
+          "Java"
+        ],
+        "enabled": true,
+        "repo": "https://github.com/BetterLordWilliam/COMP2522_Assignment2",
+        "image": {
+          "src": "/images/portfolio/GameOfLife.png",
+          "width": 1200,
+          "height": 1200,
+          "type": "Image",
+          "_raw": {}
+        },
+        "body": {
+          "raw": "undefined",
+          "html": "<p>undefined</p>"
+        },
+        "_id": "portfolio/the-game-of-life.md",
+        "_raw": {
+          "sourceFilePath": "portfolio/the-game-of-life.md",
+          "sourceFileName": "the-game-of-life.md",
+          "sourceFileDir": "portfolio",
+          "contentType": "markdown",
+          "flattenedPath": "portfolio/the-game-of-life"
+        },
+        "type": "Portfolio"
+      },
+      "documentHash": "1715902830899",
       "hasWarnings": false,
       "documentTypeName": "Portfolio"
     }

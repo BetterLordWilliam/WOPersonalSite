@@ -9,7 +9,7 @@ import { PortfolioCard } from "@/components/PortfolioCard";
  */
 const PortfolioIndex: NextPage = () => {
     return (
-        <section className="mx-auto max-w-3xl">
+        <section className="mx-auto max-w-4xl">
             <h1 className="py-4 text-center text-4xl font-bold">Project Portfolio page</h1>
             <div className="p-4 grid grid-cols-3 gap-4">
                 {allPortfolios.map((portfolio, index) => {

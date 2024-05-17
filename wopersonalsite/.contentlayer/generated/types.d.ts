@@ -21,7 +21,7 @@ export type Portfolio = {
   tags: string[]
   enabled?: boolean | undefined
   repo?: string | undefined
-  hostedLink?: string | undefined
+  try?: string | undefined
   image: Image
   /** Markdown file body */
   body: Markdown

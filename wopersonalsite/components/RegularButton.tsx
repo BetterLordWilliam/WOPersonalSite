@@ -17,11 +17,11 @@ export const RegularButton: React.FC<params> = ({url, buttonText}) => {
     return (
         <div className="m-1">
             {url ? (
-                <div className="rounded p-1 bg-zinc-900 hover:bg-cyan-800">
+                <div className="rounded p-1 bg-zinc-900 hover:bg-button_green_dark">
                 <Link href={url}> {buttonText} </Link>
                 </div>
             ) : 
-                <div className="rounded p-1 bg-zinc-900 italic">
+                <div className="rounded p-1 bg-zinc-900 hover:bg-red-900 italic">
                 <span> {buttonText} </span>
                 </div>
             }

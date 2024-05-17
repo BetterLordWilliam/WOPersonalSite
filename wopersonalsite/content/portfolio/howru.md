@@ -15,9 +15,21 @@ image:
   width: 1200
   height: 1200
 enabled: true
-hostedLink: https://howru2-fcdff.web.app/
+try: https://howru2-fcdff.web.app/
 title: HowRu
 slug: howru
-
 ---
-undefined
+
+## About the Project
+
+HowRu is a mental health focused social media app. The app provides users with a means of achieving genuine connections with people in their community with features such as localized posting and a built-in messaging feature.
+
+## How to Visit
+
+Use the link at the bottom of the page to access the hosted webapp!
+1. Create an account.
+2. Enjoy.
+
+## Contributors
+
+Aside from myself, HowRu was developed by Bavneet Dhillon and Raymond Xie.

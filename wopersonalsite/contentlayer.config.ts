@@ -21,7 +21,7 @@ export const Portfolio = defineDocumentType(() => ({
         tags: {type: "list", of: {type: "string"}, required: true},
         enabled: {type: "boolean", required: false},
         repo: {type: "string", required: false},
-        hostedLink: {type: "string", required: false},
+        try: {type: "string", required: false},
         image: {type: "nested", of: Image, required: true},
     }
 }));

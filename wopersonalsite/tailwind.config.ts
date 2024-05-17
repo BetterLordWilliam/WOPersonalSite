@@ -15,6 +15,9 @@ const config: Config = {
       },
       colors: {
         "closeToBlack": "#0E0C0A",
+        "closeishToBlack": "#1E1E1E",
+        "lessCloseToBlack": "#232323",
+        "button_green_dark": "#006200",
       },
     },
   },

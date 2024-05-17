@@ -14,7 +14,7 @@ image:
   height: 313
 location: Here
 enabled: false
-Hosted: youtube.com
+try: youtube.com
 title: Test Project
 slug: test-project
 

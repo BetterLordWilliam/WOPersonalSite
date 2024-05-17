@@ -12,7 +12,7 @@ image:
   height: 1200
 enabled: true
 title: The Game of Life
-slug: game-of-life
+slug: the-game-of-life
 
 ---
 undefined
