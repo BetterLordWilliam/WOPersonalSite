@@ -20,7 +20,7 @@ interface Params {
  */
 const Page:React.FC<Params> = ({params: {slug}}) => {
     //console.log(allPortfolios);
-    const item = allPortfolios.find((item) => {console.log(item.slug); if (item.slug === slug) return item;});
+    const item = allPortfolios.find((item) => {if (item.slug === slug) return item;});
     
     // 404 for not found item
     if (!item) {
@@ -38,7 +38,7 @@ const Page:React.FC<Params> = ({params: {slug}}) => {
             <div className="p-2"> Techstack </div>
             {item.tags.map((thisTag) => {
                 return (
-                    <div className="inline p-1">
+                    <div key={thisTag} className="inline p-1">
                     <PortfolioTag tag={thisTag}></PortfolioTag>
                     </div>
                 );

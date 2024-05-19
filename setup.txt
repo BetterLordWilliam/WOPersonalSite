@@ -1,0 +1,12 @@
+=== NODE
+npm install;
+npm i next;
+npm i create-next-app@latest;
+npm i tailwindcss;
+npm i resend react-email @react-email/components @react-email/render;
+npm audit --force;
+(possible commands)
+
+=== YARN
+yarn; yarn build;
+yarn start;

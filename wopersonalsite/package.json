@@ -11,14 +11,18 @@
   },
   "dependencies": {
     "@next/env": "^14.2.3",
+    "@react-email/components": "^0.0.17",
+    "@react-email/render": "^0.0.13",
     "contentlayer": "^0.3.4",
     "next": "14.2.3",
     "next-contentlayer": "^0.3.4",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-email": "^1.10.1",
+    "resend": "^3.2.0"
   },
   "devDependencies": {
-    "@kodaps/notion-parse": "^0.0.14",
+    "@kodaps/notion-parse": "^0.0.1",
     "@tailwindcss/typography": "^0.5.13",
     "@types/node": "^20",
     "@types/react": "^18",
