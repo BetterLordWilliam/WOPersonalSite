@@ -17,6 +17,7 @@ const config: Config = {
         "closeToBlack": "#0E0C0A",
         "closeishToBlack": "#1E1E1E",
         "lessCloseToBlack": "#232323",
+        "consoleGreen": "#5BD821",
         "button_green_dark": "#006200",
       },
     },

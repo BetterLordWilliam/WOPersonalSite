@@ -22,20 +22,16 @@ export default function Form() {
         <div className="rounded pt-12 p-8 bg-closeiToBlack max-w-full">
         <div>
             <form action={sendEmailAction}>
-                <div className="grid grid-cols-2 py-4">
-                    <label htmlFor="name">Name</label>
-                    <input type="text" name="name" id="name"></input>
+                <div className="py-4">
+                    <input placeholder="Your Name" className="w-full p-2 rounded bg-closeToBlack" type="text" name="name" id="name"></input>
                 </div>
-                <div className="grid grid-cols-2 py-5">
-                    <label htmlFor="email">Email</label>
-                    <input type="email" name="email" id="email"></input>
+                <div className="py-4">
+                    <input placeholder="your@email.example" className="w-full p-2 rounded bg-closeToBlack" type="email" name="email" id="email"></input>
                 </div>
-                <div className="grid grid-rows-2 py-5">
-                    <label htmlFor="message" >Message</label>
-                    <br></br>
-                    <textarea name="message" id="message" cols={30} rows={10}></textarea>
+                <div className="py-4">
+                    <textarea placeholder="Your message to me..." className="w-full p-2 rounded bg-closeToBlack resize-none" name="message" id="message" cols={30} rows={15}></textarea>
                 </div>
-                <button type="submit">Send</button>
+                <button className="rounded p-1 bg-closeishToBlack hover:bg-button_green_dark" type="submit">Send</button>
             </form>
         </div>
         </div>

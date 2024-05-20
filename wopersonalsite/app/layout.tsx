@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
 import { Inter } from "next/font/google";
 
 import "../styles/globals.css";
@@ -24,9 +25,14 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-        <body className={"min-h-screen bg-closeToBlack " + inter.className}>
+        <body className={`${inter.className} bg-closeToBlack`}>
+            <div id="main" className="flex flex-col justify-between min-h-screen">
             <Header/>
+            <div className="mb-auto">
             {children}
+            </div>
+            <Footer/>
+            </div>
         </body>
         </html>
     );

@@ -12,6 +12,7 @@ module.exports = {
         "closeiToBlack": "#151515",
         "closeishToBlack": "#1E1E1E",
         "lessCloseToBlack": "#232323",
+        "consoleGreen": "#5BD821",
         "button_green_dark": "#006200",
       },
     },
