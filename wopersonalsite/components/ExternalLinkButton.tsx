@@ -17,7 +17,7 @@ export const ExternalLinkButton: React.FC<params> = ({url, buttonText}) => {
     return (
         <div className="m-1">
             {url ? (
-                <div className="rounded p-1 bg-zinc-900 hover:bg-button_green_dark">
+                <div className="flex justify-center rounded p-1 bg-zinc-900 hover:bg-button_green_dark">
                 <Link href={url}> {buttonText} </Link>
                 </div>
             ) : 
