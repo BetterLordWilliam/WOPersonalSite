@@ -9,9 +9,12 @@ interface State {
 
 /**
  * sendEmail:           send an email with user message to me.
- * 
- * @param prevSate 
- * @param formData 
+ *
+ * Uses the Resend API to send emails to my own email
+ * Allows users to contact me
+ *  
+ * @param prevSate      form state
+ * @param formData      the content of the form as entered by the user
  * @returns 
  */
 export const sendEmail = async (prevSate: State, formData: FormData) => {

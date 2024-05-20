@@ -13,7 +13,7 @@ interface params {
  * @param buttonText:   Text displayed in the button
  * @returns             JSX Component
  */
-export const RegularButton: React.FC<params> = ({url, buttonText}) => {
+export const ExternalLinkButton: React.FC<params> = ({url, buttonText}) => {
     return (
         <div className="m-1">
             {url ? (

@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { PortfolioTag } from "../../../components/PortfolioTag";
-import { RegularButton } from "../../../components/RegularButton"; // to be used in the furture, trust me...
+import { ExternalLinkButton } from "../../../components/ExternalLinkButton"; // to be used in the furture, trust me...
 import { Portfolio, allPortfolios } from "contentlayer/generated";
 import { notFound } from "next/navigation";
 
@@ -56,8 +56,8 @@ const Page:React.FC<Params> = ({params: {slug}}) => {
 
         <div className="rounded bg-zinc-800 flex my-2 p-2">
             <div className="p-2"> Links </div>
-            <RegularButton url={item.repo} buttonText="Github"></RegularButton>
-            <RegularButton url={item.try} buttonText="Try"></RegularButton>
+            <ExternalLinkButton url={item.repo} buttonText="Github"></ExternalLinkButton>
+            <ExternalLinkButton url={item.try} buttonText="Try"></ExternalLinkButton>
         </div>
 
         <div className="pt-2 pb-4 flex justify-center">

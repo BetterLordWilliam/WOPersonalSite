@@ -4,6 +4,13 @@ import { sendEmail } from "@/scripts/actions";
 import { useEffect } from "react";
 import { useFormState } from "react-dom";
 
+/**
+ * Form:        Contact form for the contact index page.
+ * 
+ * Reports the outcome of the actions.ts --> sendEmail action, via alert
+ * 
+ * @returns     Form html 
+ */
 export default function Form() {
     const [sendEmailState, sendEmailAction] = useFormState(sendEmail, {
         error: null,
