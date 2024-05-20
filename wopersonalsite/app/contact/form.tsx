@@ -19,14 +19,25 @@ export default function Form() {
     }, [sendEmailState])
 
     return (
-        <form action={sendEmailAction}>
-            <label htmlFor="name">Name</label>
-            <input type="text" name="name" id="name"></input>
-            <label htmlFor="email">Email</label>
-            <input type="email" name="email" id="email"></input>
-            <label htmlFor="message" >Message</label>
-            <textarea name="message" id="message" cols={30} rows={10}></textarea>
-            <button type="submit">Send</button>
-        </form>
+        <div className="rounded pt-12 p-8 bg-closeiToBlack max-w-full">
+        <div>
+            <form action={sendEmailAction}>
+                <div className="grid grid-cols-2 py-4">
+                    <label htmlFor="name">Name</label>
+                    <input type="text" name="name" id="name"></input>
+                </div>
+                <div className="grid grid-cols-2 py-5">
+                    <label htmlFor="email">Email</label>
+                    <input type="email" name="email" id="email"></input>
+                </div>
+                <div className="grid grid-rows-2 py-5">
+                    <label htmlFor="message" >Message</label>
+                    <br></br>
+                    <textarea name="message" id="message" cols={30} rows={10}></textarea>
+                </div>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+        </div>
     );
 }

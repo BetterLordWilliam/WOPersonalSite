@@ -2,10 +2,12 @@ import Form from "./form";
 
 const ContactIndex = () => {
     return (
-        <div>
-            <h1>Welcome to the contact page</h1>
+        <section className="mx-auto max-w-4xl">
+            <div className="flex justify-center">
+            <h1>Let's Get in Touch</h1>
+            </div>
             <Form></Form>
-        </div>
+        </section>
     );
 
 };
