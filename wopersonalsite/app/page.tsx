@@ -21,8 +21,8 @@ const HomeIndex: NextPage = () => {
                     
                     <h3 className="mb-4 text-white">I am Will Otterbein, a programmer from British Columbia, Canada.</h3>
                     <p>
-                    Since highschool, I've busied myself with the thrills of programming. 
-                    I've always enjoyed the engagement received from solving complex problems, 
+                    Since highschool, I&apos;ve busied myself with the thrills of programming. 
+                    I have always enjoyed the engagement received from solving complex problems, 
                     and do my best to elegantly code the solutions to the various problems that I have encountered.
                     </p>
                     <br/>
