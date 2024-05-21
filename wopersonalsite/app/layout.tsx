@@ -7,6 +7,7 @@ import { Inter } from "next/font/google";
 import "../styles/globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
+const icon = "../favicon.ico";
 
 export const metadata: Metadata = {
     title: "Will's Personal Website",
@@ -25,6 +26,9 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
+        <head>
+            <link rel="icon" href={icon} sizes="any"/>
+        </head>
         <body className={`${inter.className} bg-closeToBlack`}>
             <div id="main" className="flex flex-col justify-between min-h-screen">
             <Header/>
