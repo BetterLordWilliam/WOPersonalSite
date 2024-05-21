@@ -8,7 +8,7 @@ import Form from "./form";
  */
 const ContactIndex: NextPage = () => {
     return (
-        <div className="mx-auto max-w-5xl">
+        <section className="mx-auto max-w-5xl">
             <div className="mx-4 mb-8">
             <div>
                 <h1>Let's Get in Touch</h1>
@@ -21,7 +21,7 @@ const ContactIndex: NextPage = () => {
                 </div>
                 <Form></Form>
             </div>
-        </div>
+        </section>
     );
 
 };

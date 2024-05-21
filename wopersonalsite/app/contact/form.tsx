@@ -30,13 +30,13 @@ export default function Form() {
         <div>
             <form action={sendEmailAction}>
                 <div className="py-4">
-                    <input placeholder="Your Name" className="w-full p-2 rounded bg-closeToBlack" type="text" name="name" id="name"></input>
+                    <input placeholder="Your Name" className="w-full p-2 rounded bg-closeToBlack" type="text" name="name" id="name" required></input>
                 </div>
                 <div className="py-4">
-                    <input placeholder="your@email.example" className="w-full p-2 rounded bg-closeToBlack" type="email" name="email" id="email"></input>
+                    <input placeholder="your@email.example" className="w-full p-2 rounded bg-closeToBlack" type="email" name="email" id="email" required></input>
                 </div>
                 <div className="py-4">
-                    <textarea placeholder="Your message to me..." className="w-full p-2 rounded bg-closeToBlack resize-none" name="message" id="message" cols={30} rows={15}></textarea>
+                    <textarea placeholder="Your message to me..." className="w-full p-2 rounded bg-closeToBlack resize-none" name="message" id="message" cols={30} rows={15} required></textarea>
                 </div>
                 <button className="rounded p-1 bg-closeishToBlack hover:bg-button_green_dark" type="submit">Send</button>
             </form>
