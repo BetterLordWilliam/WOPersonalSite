@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 
 const meImage: string = "../images/MeFull.png";
-const meImage_Small: string = "../images/Me.png";
+const meImage_Small: string = "../images/me.png";
 
 const HomeIndex: NextPage = () => {
   return (
