@@ -11,7 +11,7 @@ const ContactIndex: NextPage = () => {
         <section className="mx-auto max-w-5xl">
             <div className="mx-4 mb-8">
             <div>
-                <h1>Let's Get in Touch</h1>
+                <h1>Let&apos;s Get in Touch</h1>
                 <div className="my-4 p-2 rounded bg-closeishToBlack">
                     <p>
                         Use the form below to send me a direct email message. Alternatively, 

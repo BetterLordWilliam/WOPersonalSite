@@ -12,7 +12,7 @@ const HomeIndex: NextPage = () => {
                     
                     <p> 
                     <span className="text-consoleGreen">Welcome to my website.</span> Here you will find a showcase of the major projects that
-                    I am currently working on as well as the projects that I've completed in the past.
+                    I am currently working on as well as the projects that I&apos;ve completed in the past.
                     </p>
 
             </div>
@@ -22,7 +22,7 @@ const HomeIndex: NextPage = () => {
                     <br/>
                     <p>
                     Furthermore, you will find in the footer links to my social media which you can use to contact me.
-                    If you'd prefer, I've also developed a contact page that you can use to connect via email.
+                    If you&apos;d prefer, I&apos;ve also developed a contact page that you can use to connect via email.
                     </p>
                     <br/>
                     <br/>
