@@ -1,6 +1,6 @@
 # Personal Website
 
-**Hosted Link** : ⏳ `coming soon` ⌛
+**Hosted Link** : [site](https://wo-personal-site.vercel.app/)
 
 My website where I will showcase my content (professional and otherwise) to the world.
 
