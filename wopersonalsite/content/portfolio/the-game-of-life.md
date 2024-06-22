@@ -11,6 +11,7 @@ image:
   width: 1200
   height: 1200
 enabled: true
+try: https://github.com/BetterLordWilliam/COMP2522_Assignment2/releases
 title: The Game of Life
 slug: the-game-of-life
 

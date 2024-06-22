@@ -1,7 +1,9 @@
-// @ts-check
+// @ts-nocheck
 
-require("dotenv").config();
 const NotionParse = require("@kodaps/notion-parse");
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 /**
  * go:                              code which retrieves notion portfolio content
@@ -9,7 +11,6 @@ const NotionParse = require("@kodaps/notion-parse");
  * NOTION_PORTFOLIO_DATABASE_ID:    the Notion Page that stores the actual project document content
  */
 const go = async () => {
-
   if (process.env.NOTION_SECRET) {
     await NotionParse.parseNotion(process.env.NOTION_SECRET, './content', [
       {
