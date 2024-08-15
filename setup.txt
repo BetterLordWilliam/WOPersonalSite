@@ -10,3 +10,4 @@ npm audit --force;
 === YARN
 yarn; yarn build;
 yarn start;
+test
