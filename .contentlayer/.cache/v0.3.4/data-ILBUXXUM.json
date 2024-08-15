@@ -1,0 +1,156 @@
+{
+  "cacheItemsMap": {
+    "portfolio/game-of-life.md": {
+      "document": {
+        "title": "The Game of Life",
+        "startDate": "2024-02-20T00:00:00.000Z",
+        "endDate": "2024-04-21T00:00:00.000Z",
+        "slug": "game-of-life",
+        "notionId": "c4718d36-59a2-4a4e-b3a1-6bf81343f793",
+        "tags": [
+          "Java"
+        ],
+        "enabled": true,
+        "repo": "https://github.com/BetterLordWilliam/COMP2522_Assignment2",
+        "image": {
+          "src": "/images/portfolio/GameOfLife.png",
+          "width": 1200,
+          "height": 1200,
+          "type": "Image",
+          "_raw": {}
+        },
+        "body": {
+          "raw": "undefined",
+          "html": "<p>undefined</p>"
+        },
+        "_id": "portfolio/game-of-life.md",
+        "_raw": {
+          "sourceFilePath": "portfolio/game-of-life.md",
+          "sourceFileName": "game-of-life.md",
+          "sourceFileDir": "portfolio",
+          "contentType": "markdown",
+          "flattenedPath": "portfolio/game-of-life"
+        },
+        "type": "Portfolio"
+      },
+      "documentHash": "1715825347886",
+      "hasWarnings": false,
+      "documentTypeName": "Portfolio"
+    },
+    "portfolio/howru.md": {
+      "document": {
+        "title": "HowRu",
+        "startDate": "2023-09-05T00:00:00.000Z",
+        "endDate": "2023-12-19T00:00:00.000Z",
+        "slug": "howru",
+        "notionId": "5575352a-f8da-4f07-93e8-2b9a987a5944",
+        "tags": [
+          "Firebase",
+          "JavaScript",
+          "HTML",
+          "CSS",
+          "MapBox"
+        ],
+        "enabled": true,
+        "repo": "https://github.com/rraymondx/1800_202330_BBY25",
+        "image": {
+          "src": "/images/portfolio/HowRu.png",
+          "width": 1200,
+          "height": 1200,
+          "type": "Image",
+          "_raw": {}
+        },
+        "body": {
+          "raw": "undefined",
+          "html": "<p>undefined</p>"
+        },
+        "_id": "portfolio/howru.md",
+        "_raw": {
+          "sourceFilePath": "portfolio/howru.md",
+          "sourceFileName": "howru.md",
+          "sourceFileDir": "portfolio",
+          "contentType": "markdown",
+          "flattenedPath": "portfolio/howru"
+        },
+        "type": "Portfolio"
+      },
+      "documentHash": "1715902830969",
+      "hasWarnings": true,
+      "documentTypeName": "Portfolio"
+    },
+    "portfolio/keyfinder.md": {
+      "document": {
+        "title": "KeyFinder",
+        "startDate": "2022-12-18T00:00:00.000Z",
+        "endDate": "2023-03-14T00:00:00.000Z",
+        "slug": "keyfinder",
+        "notionId": "e74d6d0d-b13b-465a-be41-bdb21291b6ec",
+        "tags": [
+          "Java"
+        ],
+        "enabled": true,
+        "repo": "https://github.com/BetterLordWilliam/KeyFinder",
+        "image": {
+          "src": "/images/portfolio/KeyFinder.png",
+          "width": 1200,
+          "height": 1200,
+          "type": "Image",
+          "_raw": {}
+        },
+        "body": {
+          "raw": "undefined",
+          "html": "<p>undefined</p>"
+        },
+        "_id": "portfolio/keyfinder.md",
+        "_raw": {
+          "sourceFilePath": "portfolio/keyfinder.md",
+          "sourceFileName": "keyfinder.md",
+          "sourceFileDir": "portfolio",
+          "contentType": "markdown",
+          "flattenedPath": "portfolio/keyfinder"
+        },
+        "type": "Portfolio"
+      },
+      "documentHash": "1715902831474",
+      "hasWarnings": false,
+      "documentTypeName": "Portfolio"
+    },
+    "portfolio/the-game-of-life.md": {
+      "document": {
+        "title": "The Game of Life",
+        "startDate": "2024-02-20T00:00:00.000Z",
+        "endDate": "2024-04-21T00:00:00.000Z",
+        "slug": "the-game-of-life",
+        "notionId": "c4718d36-59a2-4a4e-b3a1-6bf81343f793",
+        "tags": [
+          "Java"
+        ],
+        "enabled": true,
+        "repo": "https://github.com/BetterLordWilliam/COMP2522_Assignment2",
+        "image": {
+          "src": "/images/portfolio/GameOfLife.png",
+          "width": 1200,
+          "height": 1200,
+          "type": "Image",
+          "_raw": {}
+        },
+        "body": {
+          "raw": "undefined",
+          "html": "<p>undefined</p>"
+        },
+        "_id": "portfolio/the-game-of-life.md",
+        "_raw": {
+          "sourceFilePath": "portfolio/the-game-of-life.md",
+          "sourceFileName": "the-game-of-life.md",
+          "sourceFileDir": "portfolio",
+          "contentType": "markdown",
+          "flattenedPath": "portfolio/the-game-of-life"
+        },
+        "type": "Portfolio"
+      },
+      "documentHash": "1715902830899",
+      "hasWarnings": false,
+      "documentTypeName": "Portfolio"
+    }
+  }
+}

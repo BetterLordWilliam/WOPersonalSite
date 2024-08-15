@@ -1,4 +1,7 @@
 /.vscode/*
+/.next/*
+/.content/*
+/node_modules/*
 
 *.un
 *~

@@ -1,7 +1,8 @@
 ---
 notionId: aaebccde-0c12-4eaa-9aea-763952d50f66
-type: portfolio
-date: 2024-05-13
+type: Portfolio
+startDate: 2024-05-13
+repo: https://github.com/BetterLordWilliam/WOPersonalSite/tree/PortfolioPage
 tags:
   - Test
   - Test1
@@ -12,7 +13,8 @@ image:
   width: 288
   height: 313
 location: Here
-enabled: true
+enabled: false
+try: youtube.com
 title: Test Project
 slug: test-project
 
