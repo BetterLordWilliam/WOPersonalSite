@@ -3,6 +3,8 @@
 /.content/*
 /node_modules/*
 
+.env
+
 *.un
 *~
 *.swp
