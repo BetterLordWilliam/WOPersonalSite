@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { PortfolioTag } from "../../../components/PortfolioTag";
-import { ExternalLinkButton } from "../../../components/ExternalLinkButton"; // to be used in the furture, trust me...
+import { PortfolioTag } from "../../components/PortfolioTag";
+import { ExternalLinkButton } from "../../components/ExternalLinkButton"; // to be used in the furture, trust me...
 import { Portfolio, allPortfolios } from "contentlayer/generated";
 import { notFound } from "next/navigation";
 

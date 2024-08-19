@@ -1,7 +1,8 @@
 import { NextPage } from "next";
+import Image from "next/image";
 
-const meImage: string = "../images/MeFull.png";
-const meImage_Small: string = "../images/me.png";
+import meFull from "../public/images/MeFull.png";
+import me from "../public/images/me.png";
 
 const HomeIndex: NextPage = () => {
   return (
@@ -43,7 +44,7 @@ const HomeIndex: NextPage = () => {
 
                 </div>
                 <div className="hidden max-w-48 overview-hidden ml-auto md:block">
-                    <img className="rounded" src={meImage_Small} alt="me"></img>
+                    <Image className="rounded" src={me} alt="me"></Image>
                 </div>
                 <br/>
                 <div className="block basis-full md:hidden">

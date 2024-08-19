@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 import { allPortfolios } from "contentlayer/generated";
-import { PortfolioCard } from "@/components/PortfolioCard";
+import { PortfolioCard } from "../components/PortfolioCard";
 
 /**
  * PortfolioIndex:      Renders previews of portfolio pages in a gallery view.

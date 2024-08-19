@@ -1,6 +1,6 @@
 "use client"
 
-import { sendEmail } from "@/scripts/actions";
+import { sendEmail } from "./email-action";
 import { useEffect } from "react";
 import { useFormState } from "react-dom";
 
