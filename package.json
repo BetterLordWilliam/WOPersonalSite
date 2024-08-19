@@ -4,9 +4,9 @@
   "type": "commonjs",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "node --env-file=.env.development ./scripts/get-portfolios.js && next dev",
+    "start": "node --env-file=.env.production ./scripts/get-portfolios.js && next start",
     "build": "next build",
-    "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
