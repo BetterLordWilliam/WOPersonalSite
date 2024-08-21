@@ -11,6 +11,7 @@ image:
   width: 1200
   height: 1200
 enabled: true
+pageId: 37f0131781da4c9e8dc89157974b2677
 try: https://github.com/BetterLordWilliam/KeyFinder/releases
 title: KeyFinder
 slug: keyfinder

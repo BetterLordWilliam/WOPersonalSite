@@ -38,8 +38,8 @@
         },
         "type": "Portfolio"
       },
-      "documentHash": "1724101779527",
-      "hasWarnings": false,
+      "documentHash": "1724205677839",
+      "hasWarnings": true,
       "documentTypeName": "Portfolio"
     },
     "portfolio/keyfinder.md": {
@@ -76,8 +76,8 @@
         },
         "type": "Portfolio"
       },
-      "documentHash": "1724101779308",
-      "hasWarnings": false,
+      "documentHash": "1724205677728",
+      "hasWarnings": true,
       "documentTypeName": "Portfolio"
     },
     "portfolio/the-game-of-life.md": {
@@ -114,8 +114,8 @@
         },
         "type": "Portfolio"
       },
-      "documentHash": "1724101779660",
-      "hasWarnings": false,
+      "documentHash": "1724205678882",
+      "hasWarnings": true,
       "documentTypeName": "Portfolio"
     }
   }
