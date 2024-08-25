@@ -18,7 +18,7 @@ interface Params {
  * @param slug:     String, the slug value of the portfolio information we will display
  * @returns         NextPage
  */
-const Page:React.FC<Params> = ({params: {slug}}) => {
+const Page:React.FC<Params> = ({params: { slug }}) => {
     //console.log(allPortfolios);
     const item = allPortfolios.find((item) => {if (item.slug === slug) return item;});
     
