@@ -10,10 +10,10 @@ interface PortfolioTagProps {
  * @param tag:          The string which is the text for this tag
  * @returns             JSX component
  */
-export const PortfolioTag: React.FC<PortfolioTagProps> = ({tag}) => {
+export const PortfolioTag: React.FC<PortfolioTagProps> = ({ tag }) => {
     return (
         <div className="rounded p-1 bg-zinc-900">
-        {tag}
+            {tag}
         </div>
     );
 }

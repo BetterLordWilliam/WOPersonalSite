@@ -10,16 +10,15 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@kodaps/notion-parse": "^0.0.14",
     "@next/env": "^14.2.3",
+    "@notionhq/client": "^2.2.15",
     "@react-email/components": "^0.0.17",
     "@react-email/render": "^0.0.13",
-    "contentlayer": "^0.3.4",
     "next": "14.2.3",
-    "next-contentlayer": "^0.3.4",
     "react": "^18",
     "react-dom": "^18",
     "react-email": "^1.10.1",
+    "react-router-dom": "^6.26.1",
     "resend": "^3.2.0"
   },
   "devDependencies": {

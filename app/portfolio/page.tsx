@@ -1,9 +1,8 @@
 "use client"
 
-import { NextPage } from "next";
 import { PortfolioCard } from "../components/PortfolioCardTest";
 
-import { getPortfolios } from "../../scripts/notion-connection-util.js";
+import { getPortfolios } from "../../scripts/notion-connection-util.mjs";
 import { useEffect, useState } from "react";
 
 export interface Image {
@@ -15,6 +14,7 @@ export interface Portfolio {
     endDate: Date,
     startDate: Date,
     pageId: string,
+    slug: string,
     repo: URL,
     try: URL
     tags: string[],
@@ -33,8 +33,11 @@ const PortfolioIndex = () => {
     useEffect(() => {
         const fetchPortfolios = async () => {
             try {
-                const results = await getPortfolios();
-                setPortfolios(results as Portfolio[]);
+                const results = await getPortfolios() as Portfolio[];
+                results.forEach(portfolio => {
+                    localStorage.setItem(portfolio.slug, JSON.stringify(portfolio));
+                });
+                setPortfolios(results);
             } catch (error) {
                 console.log(`Error: ${error}`);
             }
@@ -60,8 +63,7 @@ const PortfolioIndex = () => {
                 {
                     portfolios.map((portfolio: Portfolio, i) => {
                         return (
-                            <PortfolioCard key={i} item={portfolio}>
-                            </PortfolioCard>
+                            <PortfolioCard key={i} item={portfolio}></PortfolioCard>
                         );
                     })
                 }
