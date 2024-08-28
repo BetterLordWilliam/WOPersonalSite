@@ -1,11 +1,14 @@
 "use client"
 
-import Image from "next/image";
+import NextImage from "next/image";
 import Link from "next/link";
 
 import { PortfolioTag } from "../../components/PortfolioTag";
-import { ExternalLinkButton } from "../../components/ExternalLinkButton"; // to be used in the furture, trust me...
+import { ExternalLinkButton } from "../../components/ExternalLinkButton";
+    // to be used in the furture, trust me...
 import { getNotionPageBlocks } from "../../../scripts/notion-connection-util.mjs";
+    // Parse page data, load it into the page itsel, next on my list of tasks
+import { ImageThumbnail } from "../../components/ImageThumbnail";
 import { Portfolio } from "../page";
 import { notFound, useSearchParams } from "next/navigation";
 import { NextPage } from "next";
@@ -48,11 +51,9 @@ const Page:React.FC<Params> = ({ params: { slug } }) => {
                 })}
             </div>
 
-            <Image className="w-full"
-                src={item.imageUrl} 
-                alt={item.slug}
-                width={250}
-                height={250} />
+            <ImageThumbnail
+                imageUrl={item.imageUrl} 
+                altText={item.slug} />
 
             <div className="rounded bg-zinc-800 flex my-2 p-2">
                 <div className="p-2"> Links </div>
