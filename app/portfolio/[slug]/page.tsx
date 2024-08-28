@@ -48,9 +48,11 @@ const Page:React.FC<Params> = ({ params: { slug } }) => {
                 })}
             </div>
 
-            <img className="w-full"
-                src={item?.images[0].url.toString()} 
-                alt={item?.title} />
+            <Image className="w-full"
+                src={item.imageUrl} 
+                alt={item.slug}
+                width={250}
+                height={250} />
 
             <div className="rounded bg-zinc-800 flex my-2 p-2">
                 <div className="p-2"> Links </div>

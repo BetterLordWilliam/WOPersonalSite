@@ -13,9 +13,10 @@ export const getDatabase = async () => {
 
 /**
  * getPage:     returns page of specified id.
- * 
- * @param {*} notionPageId
- * @returns
+ *    
+ * @param {*} notionPageId      Notion pageID
+ * @returns                     response from Notion API 
+ *                              (object with blocks & metadata)
  */
 export const getNotionPageBlocks = async (notionPageId) => {
     return (await notion.blocks.children.list({
@@ -23,6 +24,12 @@ export const getNotionPageBlocks = async (notionPageId) => {
     })).results;
 };
 
+/**
+ * extractPortfolioData:        retrieves valuable Notion data.
+ * 
+ * @param {*} portfolioObject   the raw response from Notion API
+ * @returns                     Object with the valueable pieces of data
+ */
 const extractPortfolioData = (portfolioObject) => {
     if (!portfolioObject)
         return {};
@@ -35,17 +42,13 @@ const extractPortfolioData = (portfolioObject) => {
         title: portfolioObject.properties.title.title[0].plain_text,
         slug: portfolioObject.properties.slug.rich_text[0].plain_text,
         pageId: portfolioObject.properties.pageId.rich_text[0].plain_text,
+        imageUrl: portfolioObject.properties.image.url,
         tags: portfolioObject.properties.tags.multi_select.map(tag => { 
             return tag.name 
         }),
-        images: portfolioObject.properties.image.files.map(file => { 
-            return {
-                name: file.name,
-                url: file.file.url
-            }
-        })
     };
-    // console.log(processedPortfolio);
+
+    console.log(processedPortfolio);
     return processedPortfolio;
 }
 

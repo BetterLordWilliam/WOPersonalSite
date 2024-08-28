@@ -5,20 +5,15 @@ import { PortfolioCard } from "../components/PortfolioCardTest";
 import { getPortfolios } from "../../scripts/notion-connection-util.mjs";
 import { useEffect, useState } from "react";
 
-export interface Image {
-    name: string,
-    url: URL
-};
-
 export interface Portfolio {
     endDate: Date,
     startDate: Date,
     pageId: string,
     slug: string,
-    repo: URL,
-    try: URL
+    repo: string,
+    try: string
     tags: string[],
-    images: Image[],
+    imageUrl: string,
     title: string
 };
 

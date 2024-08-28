@@ -15,10 +15,11 @@ export const PortfolioCard: React.FC<PortfolioCardProps> = ({ item }) => {
             }}>
             <div>
                 <div className="m-1 p-3 hover:p-4 rounded">
-                    <img className="drop-shadow-lg hover:drop-shadow-2xl aspect-square object-cover" 
-                        src={item.images[0].url.toString()} 
-                        alt={item.images[0].name}>
-                    </img>
+                    <Image className="drop-shadow-lg hover:drop-shadow-2xl aspect-square object-cover" 
+                        src={item.imageUrl} 
+                        alt={item.slug} 
+                        width={250}
+                        height={250} />
                 </div>
             </div>
             </Link>
