@@ -5,13 +5,13 @@ import Link from "next/link";
 
 import { PortfolioTag } from "../../components/PortfolioTag";
 import { ExternalLinkButton } from "../../components/ExternalLinkButton";
-    // to be used in the furture, trust me...
-import { getNotionPageBlocks } from "../../../scripts/notion-connection-util.mjs";
-    // Parse page data, load it into the page itsel, next on my list of tasks
+import { getPageContent } from "../../../scripts/notion-connection-util.mjs";
 import { ImageThumbnail } from "../../components/ImageThumbnail";
+import { MappedContent } from "../../components/MappedContent";
+
 import { Portfolio } from "../page";
 import { notFound, useSearchParams } from "next/navigation";
-import { NextPage } from "next";
+import { useState } from "react";
 
 interface Params {
     params: {
@@ -27,6 +27,20 @@ interface Params {
  */
 const Page:React.FC<Params> = ({ params: { slug } }) => {
     const item = (JSON.parse(localStorage.getItem(slug) as string)) as Portfolio;
+    const [ portfolioPageContent, setPortfolioPageContent ] = useState<{}[]>([]);
+        // PageContent should be generated JSX
+
+    function retrievePageContentFromNotion() {
+        // Retrieve notion page data
+        getPageContent(item.pageId)
+            .then(results => {
+                setPortfolioPageContent(results as {}[]);
+            })
+            .catch(error => {
+                console.log(`Error: ${error}`);
+            });
+    };
+    retrievePageContentFromNotion();
 
     // 404 for not found item
     if (!item) {
@@ -54,6 +68,7 @@ const Page:React.FC<Params> = ({ params: { slug } }) => {
             <ImageThumbnail
                 imageUrl={item.imageUrl} 
                 altText={item.slug} />
+            <MappedContent unprocessedBlocks={portfolioPageContent} />
 
             <div className="rounded bg-zinc-800 flex my-2 p-2">
                 <div className="p-2"> Links </div>

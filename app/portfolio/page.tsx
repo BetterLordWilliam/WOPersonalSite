@@ -1,7 +1,6 @@
 "use client"
 
 import { PortfolioCard } from "../components/PortfolioCardTest";
-
 import { getPortfolios } from "../../scripts/notion-connection-util.mjs";
 import { useEffect, useState } from "react";
 
@@ -55,13 +54,11 @@ const PortfolioIndex = () => {
                 </p>
             </div>
             <div className="rounded bg-closeiToBlack flex flex-direction-row flex-wrap justify-center gap-4">
-                {
-                    portfolios.map((portfolio: Portfolio, i) => {
-                        return (
-                            <PortfolioCard key={i} item={portfolio}></PortfolioCard>
-                        );
-                    })
-                }
+                {portfolios.map((portfolio: Portfolio, i) => {
+                    return (
+                        <PortfolioCard key={i} item={portfolio}></PortfolioCard>
+                    );
+                })}
             </div>
             </div>
         </section>

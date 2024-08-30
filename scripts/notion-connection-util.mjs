@@ -18,11 +18,28 @@ export const getDatabase = async () => {
  * @returns                     response from Notion API 
  *                              (object with blocks & metadata)
  */
-export const getNotionPageBlocks = async (notionPageId) => {
+const getNotionPageBlocks = async (notionPageId) => {
     return (await notion.blocks.children.list({
         block_id: notionPageId
     })).results;
 };
+
+const extractNotionPageBlockData = async (unprocessedNotionPageBlocks) => {
+    if (!unprocessedNotionPageBlocks)
+        return null;
+
+    let processedBlocks = [];
+    for (let i = 0; i < unprocessedNotionPageBlocks.length; i++) {
+        let block = unprocessedNotionPageBlocks[i];
+        let tempBlockType = block.type;
+        let processedBlock = {
+            blockType: tempBlockType,
+            blockContent: block[tempBlockType].rich_text[0].plain_text
+        };
+        processedBlocks.push(processedBlock);
+    }
+    return processedBlocks;
+}
 
 /**
  * extractPortfolioData:        retrieves valuable Notion data.
@@ -48,7 +65,7 @@ const extractPortfolioData = (portfolioObject) => {
         }),
     };
 
-    console.log(processedPortfolio);
+    // console.log(processedPortfolio);
     return processedPortfolio;
 }
 
@@ -76,4 +93,9 @@ export const getPortfolios = async () => {
     })).results.map((result) => {
         return extractPortfolioData(result);
     });
+};
+
+export const getPageContent = async (notionPageId) => {
+    let notionPageBlocks = await getNotionPageBlocks(notionPageId);
+    return (await extractNotionPageBlockData(notionPageBlocks));
 };
