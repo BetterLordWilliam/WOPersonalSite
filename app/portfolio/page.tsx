@@ -1,20 +1,10 @@
 "use client"
 
-import { PortfolioCard } from "../components/PortfolioCardTest";
-import { getPortfolios } from "../../scripts/notion-connection-util.mjs";
 import { useEffect, useState } from "react";
 
-export interface Portfolio {
-    endDate: Date,
-    startDate: Date,
-    pageId: string,
-    slug: string,
-    repo: string,
-    try: string
-    tags: string[],
-    imageUrl: string,
-    title: string
-};
+import { Portfolio } from "../types";
+import { PortfolioCard } from "../components/PortfolioCardTest";
+import { getPortfolios } from "../../scripts/notion-connection-util.mjs";
 
 /**
  * PortfolioIndex:      Renders previews of portfolio pages in a gallery view.
@@ -36,7 +26,6 @@ const PortfolioIndex = () => {
                 console.log(`Error: ${error}`);
             }
         }
-
         fetchPortfolios();
     }, []);
     

@@ -1,7 +1,7 @@
 import Link from "next/link";
 
+import { Portfolio } from "../types";
 import { ImageThumbnail } from "../components/ImageThumbnail";
-import { Portfolio } from "../portfolio/page";
 
 interface PortfolioCardProps {
     item: Portfolio

@@ -1,17 +1,16 @@
 "use client"
 
-import NextImage from "next/image";
 import Link from "next/link";
+
+import { Portfolio, Block } from "../../types";
+import { notFound } from "next/navigation";
+import { useState, useEffect } from "react";
 
 import { PortfolioTag } from "../../components/PortfolioTag";
 import { ExternalLinkButton } from "../../components/ExternalLinkButton";
-import { getPageContent } from "../../../scripts/notion-connection-util.mjs";
 import { ImageThumbnail } from "../../components/ImageThumbnail";
-import { MappedContent } from "../../components/MappedContent";
-
-import { Portfolio } from "../page";
-import { notFound, useSearchParams } from "next/navigation";
-import { useState } from "react";
+import { MappedContent } from "../../components/BlockToReact";
+import { getPageContent } from "../../../scripts/notion-connection-util.mjs";
 
 interface Params {
     params: {
@@ -27,20 +26,21 @@ interface Params {
  */
 const Page:React.FC<Params> = ({ params: { slug } }) => {
     const item = (JSON.parse(localStorage.getItem(slug) as string)) as Portfolio;
-    const [ portfolioPageContent, setPortfolioPageContent ] = useState<{}[]>([]);
-        // PageContent should be generated JSX
+    const [ portfolioPageContent, setPortfolioPageContent ] = useState<Block[]>([]);
 
-    function retrievePageContentFromNotion() {
-        // Retrieve notion page data
-        getPageContent(item.pageId)
-            .then(results => {
-                setPortfolioPageContent(results as {}[]);
-            })
-            .catch(error => {
+    // Retrieve the notion page contents for the selected
+    // Project portfolio page
+    useEffect(() => {
+        const retrievePageBlocks = async () => {
+            try {
+                const pageBlocks = await getPageContent(item.pageId) as Block[];
+                setPortfolioPageContent(pageBlocks);
+            } catch (error) {
                 console.log(`Error: ${error}`);
-            });
-    };
-    retrievePageContentFromNotion();
+            }
+        };
+        retrievePageBlocks();
+    }, []);
 
     // 404 for not found item
     if (!item) {
@@ -49,7 +49,7 @@ const Page:React.FC<Params> = ({ params: { slug } }) => {
 
     // Default content return
     return (
-        <div className="p-4 mx-auto max-w-4xl">
+        <section className="p-4 mx-auto max-w-4xl">
             <div className="flex justify-center">
                 <h1 className="font-bold text-3xl">{item?.title}</h1>
             </div>
@@ -68,7 +68,16 @@ const Page:React.FC<Params> = ({ params: { slug } }) => {
             <ImageThumbnail
                 imageUrl={item.imageUrl} 
                 altText={item.slug} />
-            <MappedContent unprocessedBlocks={portfolioPageContent} />
+            <div>
+                { portfolioPageContent.map((portfolioPageBlock: Block, i: number) => {
+                    return (
+                        <MappedContent
+                            key={i}
+                            elementIndex={`${slug}-${i}`}
+                            unprocessedBlock={portfolioPageBlock} />
+                    );
+                }) }
+            </div>
 
             <div className="rounded bg-zinc-800 flex my-2 p-2">
                 <div className="p-2"> Links </div>
@@ -78,8 +87,7 @@ const Page:React.FC<Params> = ({ params: { slug } }) => {
             <div className="pt-2 pb-4 flex justify-center">
                 <Link className="block text-blue-500" href="/portfolio"> go pack to portfolio </Link>
             </div>
-
-        </div>
+        </section>
     );
 }
 
