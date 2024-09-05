@@ -49,7 +49,7 @@ const extractNotionPageBlockData = async (unprocessedNotionPageBlocks) => {
  */
 const extractPortfolioData = (portfolioObject) => {
     if (!portfolioObject)
-        return {};
+        return null;
 
     const processedPortfolio = {
         endDate: portfolioObject.properties.endDate.date.start,
