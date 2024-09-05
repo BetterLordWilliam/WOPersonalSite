@@ -29,7 +29,9 @@ const extractNotionPageBlockData = async (unprocessedNotionPageBlocks) => {
         return null;
 
     let processedBlocks = [];
-    for (let i = 0; i < unprocessedNotionPageBlocks.length; i++) {
+    let blockNumber = unprocessedNotionPageBlocks.length;
+
+    for (let i = 0; i < blockNumber; i++) {
         let block = unprocessedNotionPageBlocks[i];
         let tempBlockType = block.type;
         let processedBlock = {
@@ -39,7 +41,7 @@ const extractNotionPageBlockData = async (unprocessedNotionPageBlocks) => {
         processedBlocks.push(processedBlock);
     }
     return processedBlocks;
-}
+};
 
 /**
  * extractPortfolioData:        retrieves valuable Notion data.
@@ -51,23 +53,25 @@ const extractPortfolioData = (portfolioObject) => {
     if (!portfolioObject)
         return null;
 
+    let po = portfolioObject.properties;
+
     const processedPortfolio = {
-        endDate: portfolioObject.properties.endDate.date.start,
-        startDate: portfolioObject.properties.startDate.date.start,
-        repo: portfolioObject.properties.repo.url,
-        try: portfolioObject.properties.try.url,
-        title: portfolioObject.properties.title.title[0].plain_text,
-        slug: portfolioObject.properties.slug.rich_text[0].plain_text,
-        pageId: portfolioObject.properties.pageId.rich_text[0].plain_text,
-        imageUrl: portfolioObject.properties.image.url,
-        tags: portfolioObject.properties.tags.multi_select.map(tag => { 
+        endDate: po.endDate.date.start,
+        startDate: po.startDate.date.start,
+        repo: po.repo.url,
+        try: po.try.url,
+        title: po.title.title[0].plain_text,
+        slug: po.slug.rich_text[0].plain_text,
+        pageId: po.pageId.rich_text[0].plain_text,
+        imageUrl: po.image.url,
+        tags: po.tags.multi_select.map(tag => { 
             return tag.name 
         }),
     };
 
     // console.log(processedPortfolio);
     return processedPortfolio;
-}
+};
 
 export const getPortfolios = async () => {
    return (await notion.databases.query({
