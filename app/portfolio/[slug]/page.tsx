@@ -2,10 +2,10 @@
 
 import Link from "next/link";
 
-import { Portfolio, Block } from "../../types";
 import { notFound } from "next/navigation";
 import { useState, useEffect } from "react";
 
+import { Portfolio, PortfolioCache, Block } from "../../types";
 import { PortfolioTag } from "../../components/PortfolioTag";
 import { ExternalLinkButton } from "../../components/ExternalLinkButton";
 import { ImageThumbnail } from "../../components/ImageThumbnail";
@@ -25,8 +25,15 @@ interface Params {
  * @returns         NextPage
  */
 const Page:React.FC<Params> = ({ params: { slug } }) => {
-    const item = (JSON.parse(localStorage.getItem(slug) as string)) as Portfolio;
     const [ portfolioPageContent, setPortfolioPageContent ] = useState<Block[]>([]);
+    const [ isLoading, setIsLoading ] = useState(true);
+
+    const retrieved = PortfolioCache.get(slug);
+    const item = retrieved ? JSON.parse(retrieved) as Portfolio : null;
+
+    // 404 for not found item
+    if (!item)
+        notFound();
 
     // Retrieve the notion page contents for the selected
     // Project portfolio page
@@ -35,17 +42,15 @@ const Page:React.FC<Params> = ({ params: { slug } }) => {
             try {
                 const pageBlocks = await getPageContent(item.pageId) as Block[];
                 setPortfolioPageContent(pageBlocks);
+
             } catch (error) {
                 console.log(`Error: ${error}`);
+            } finally {
+                setIsLoading(false);
             }
         };
         retrievePageBlocks();
     }, []);
-
-    // 404 for not found item
-    if (!item) {
-        notFound();
-    };
 
     // Default content return
     return (
@@ -64,19 +69,20 @@ const Page:React.FC<Params> = ({ params: { slug } }) => {
                     );
                 })}
             </div>
-
+            
             <ImageThumbnail
                 imageUrl={item.imageUrl} 
                 altText={item.slug} />
             <div>
-                { portfolioPageContent.map((portfolioPageBlock: Block, i: number) => {
+                {isLoading && <div>Loading. . .</div>}
+                {portfolioPageContent.map((portfolioPageBlock: Block, i: number) => {
                     return (
                         <MappedContent
                             key={i}
                             elementIndex={`${slug}-${i}`}
                             unprocessedBlock={portfolioPageBlock} />
                     );
-                }) }
+                })}
             </div>
 
             <div className="rounded bg-zinc-800 flex my-2 p-2">

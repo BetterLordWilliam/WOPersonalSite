@@ -2,22 +2,12 @@
 
 import { useEffect, useState } from "react";
 
-import { Portfolio } from "../types";
+import { Portfolio, PortfolioCache } from "../types";
 import { PortfolioCard } from "../components/PortfolioCardTest";
-import { getPortfolios, getPortfoliosPreview } from "../../scripts/notion-connection-util.mjs";
+import { getPortfolios, getPortfoliosPreview, getPortfolioFromSlug } from "../../scripts/notion-connection-util.mjs";
 
 interface Slug {
     slug: string
-};
-
-const PortfolioCache = {
-    get: (slug: string) => {
-        return localStorage.getItem(slug)
-    },
-    set: (slug: string, portfolio: Portfolio) => {
-        localStorage.setItem(slug, JSON.stringify(portfolio))
-    },
-    clear: () => { localStorage.clear() }
 };
 
 /**
@@ -26,8 +16,8 @@ const PortfolioCache = {
  * @returns NextPage:   Rendered list of the portfolio pages, /portfolio
  */
 const PortfolioIndex = () => {
-    const [portfolios, setPortfolios] = useState<Portfolio[]>([]);
-    const [isLoading, setIsLoading] = useState<Boolean>(true);
+    const [ portfolios, setPortfolios ] = useState<Portfolio[]>([]);
+    const [ isLoading, setIsLoading ] = useState<Boolean>(true);
 
     useEffect(() => {
         /**
@@ -40,7 +30,7 @@ const PortfolioIndex = () => {
                 let retrievedCached: Portfolio[] = portfolioSlugs
                     .map((slug: Slug) => PortfolioCache.get(slug.slug)) 
                     .filter(Boolean)
-                    .map((unparsed: string) => JSON.parse(unparsed) as Portfolio)
+                    .map((unparsed: string) => JSON.parse(unparsed) as Portfolio);
 
                 let missingPortfolios = portfolioSlugs.filter((slug: Slug) => 
                     !retrievedCached.some((portfolio) => portfolio.slug === slug.slug));
@@ -48,7 +38,15 @@ const PortfolioIndex = () => {
                 // implement method to retrieve individual portfolios, combine with the retrived
                 // portfolios in `setPortfolios` call below
 
-                setPortfolios([...retrievedCached]);
+                let retrievedFromNotionDB = await Promise.all(
+                    missingPortfolios.map(async (missingPortfolio) => {
+                        let retrievedFromNotion = (await getPortfolioFromSlug(missingPortfolio.slug))[0] as Portfolio;
+                        PortfolioCache.set(missingPortfolio.slug, retrievedFromNotion);
+                        return retrievedFromNotion;
+                    })
+                );
+                
+                setPortfolios([...retrievedCached, ...retrievedFromNotionDB]);
 
             } catch (error) {
                 console.log(`Error: ${error}`);

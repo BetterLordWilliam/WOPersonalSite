@@ -83,7 +83,7 @@ const extractPortfolioSlug = (portfolioObject) => {
         slug: po.slug.rich_text[0].plain_text
     };
 
-    console.log(processedPortfolio);
+    // console.log(processedPortfolio);
     return processedPortfolio;
 };
 
@@ -108,6 +108,30 @@ export const getPortfolios = async () => {
             "u%7DV%5E",
             "title"
         ]
+    })).results.map((result) => {
+        return extractPortfolioData(result);
+    });
+};
+
+export const getPortfolioFromSlug = async (slug) => {
+    return (await notion.databases.query({
+        database_id: process.env.NOTION_PORTFOLIO_DATABASE_ID,
+        filter: {
+            and: [
+                {
+                    property: "enabled",
+                    checkbox: {
+                        equals: true
+                    }
+                },
+                {
+                    property: "slug",
+                    rich_text: {
+                        equals: slug.toString()
+                    }
+                }
+            ]
+        }
     })).results.map((result) => {
         return extractPortfolioData(result);
     });
