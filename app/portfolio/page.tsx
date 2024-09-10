@@ -10,10 +10,14 @@ interface Slug {
     slug: string
 };
 
-const PorftfolioCache = {
-    get: (slug: Slug) => {} ,
-    set: (slug: Slug) => {} ,
-    clear: () => {localStorage.clear()}
+const PortfolioCache = {
+    get: (slug: string) => {
+        return localStorage.getItem(slug)
+    },
+    set: (slug: string, portfolio: Portfolio) => {
+        localStorage.setItem(slug, JSON.stringify(portfolio))
+    },
+    clear: () => { localStorage.clear() }
 };
 
 /**
@@ -27,46 +31,24 @@ const PortfolioIndex = () => {
 
     useEffect(() => {
         /**
-         * getCachedPortfolios:     helper method to retrieve portfolios that have
-         *                          been stored in browser memory.
-         * 
-         * @param slugList 
-         * @returns 
-         */
-        const getCachedPortfolios = (slugList: Slug[]) => {
-            if (!slugList)
-                return null;
-
-            let retrievedPortfolios: Portfolio[] = [];
-            slugList.forEach((slug: Slug) => {
-                let retrievedPortfolioData = localStorage.getItem(slug.slug);
-                if (retrievedPortfolioData)
-                    retrievedPortfolios.push(JSON.parse(retrievedPortfolioData));
-            });
-
-            return retrievedPortfolios;
-        };
-
-        /**
          * fetchPortfolios:         retrieves portfolios, either from storage
          *                          or requests the portfolios from the database.
          */
         const fetchPortfolios = async () => {
             try {
-                let portfolioSlugs = await getPortfoliosPreview();
-                let retrievedPortfolios = getCachedPortfolios(portfolioSlugs as Slug[]) as Portfolio[];
+                let portfolioSlugs = await getPortfoliosPreview() as Slug[];
+                let retrievedCached: Portfolio[] = portfolioSlugs
+                    .map((slug: Slug) => PortfolioCache.get(slug.slug)) 
+                    .filter(Boolean)
+                    .map((unparsed: string) => JSON.parse(unparsed) as Portfolio)
 
-                if (!retrievedPortfolios) {
-                    // alert(`Retrieving Portfolio Data.`);
-                    const results = await getPortfolios() as Portfolio[];
-                    results.forEach(portfolio => {
-                        localStorage.setItem(portfolio.slug, JSON.stringify(portfolio));
-                    });
-                    setPortfolios(results);
-                } else {
-                    // alert(`Using cached portfolios.`);
-                    setPortfolios(retrievedPortfolios);
-                }
+                let missingPortfolios = portfolioSlugs.filter((slug: Slug) => 
+                    !retrievedCached.some((portfolio) => portfolio.slug === slug.slug));
+
+                // implement method to retrieve individual portfolios, combine with the retrived
+                // portfolios in `setPortfolios` call below
+
+                setPortfolios([...retrievedCached]);
 
             } catch (error) {
                 console.log(`Error: ${error}`);
