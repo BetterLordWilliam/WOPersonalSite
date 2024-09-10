@@ -73,6 +73,20 @@ const extractPortfolioData = (portfolioObject) => {
     return processedPortfolio;
 };
 
+const extractPortfolioSlug = (portfolioObject) => {
+    if (!portfolioObject)
+        return null;
+
+    let po = portfolioObject.properties;
+
+    const processedPortfolio = {
+        slug: po.slug.rich_text[0].plain_text
+    };
+
+    console.log(processedPortfolio);
+    return processedPortfolio;
+};
+
 export const getPortfolios = async () => {
    return (await notion.databases.query({
         database_id: process.env.NOTION_PORTFOLIO_DATABASE_ID,
@@ -96,6 +110,20 @@ export const getPortfolios = async () => {
         ]
     })).results.map((result) => {
         return extractPortfolioData(result);
+    });
+};
+
+export const getPortfoliosPreview = async () => {
+    return (await notion.databases.query({
+        database_id: process.env.NOTION_PORTFOLIO_DATABASE_ID,
+        filter: {
+            property: "enabled",
+            checkbox: {
+                equals: true
+            }
+        }
+    })).results.map((result) => {
+        return extractPortfolioSlug(result);
     });
 };
 

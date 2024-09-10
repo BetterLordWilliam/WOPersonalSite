@@ -4,7 +4,17 @@ import { useEffect, useState } from "react";
 
 import { Portfolio } from "../types";
 import { PortfolioCard } from "../components/PortfolioCardTest";
-import { getPortfolios } from "../../scripts/notion-connection-util.mjs";
+import { getPortfolios, getPortfoliosPreview } from "../../scripts/notion-connection-util.mjs";
+
+interface Slug {
+    slug: string
+};
+
+const PorftfolioCache = {
+    get: (slug: Slug) => {} ,
+    set: (slug: Slug) => {} ,
+    clear: () => {localStorage.clear()}
+};
 
 /**
  * PortfolioIndex:      Renders previews of portfolio pages in a gallery view.
@@ -13,19 +23,57 @@ import { getPortfolios } from "../../scripts/notion-connection-util.mjs";
  */
 const PortfolioIndex = () => {
     const [portfolios, setPortfolios] = useState<Portfolio[]>([]);
+    const [isLoading, setIsLoading] = useState<Boolean>(true);
 
     useEffect(() => {
+        /**
+         * getCachedPortfolios:     helper method to retrieve portfolios that have
+         *                          been stored in browser memory.
+         * 
+         * @param slugList 
+         * @returns 
+         */
+        const getCachedPortfolios = (slugList: Slug[]) => {
+            if (!slugList)
+                return null;
+
+            let retrievedPortfolios: Portfolio[] = [];
+            slugList.forEach((slug: Slug) => {
+                let retrievedPortfolioData = localStorage.getItem(slug.slug);
+                if (retrievedPortfolioData)
+                    retrievedPortfolios.push(JSON.parse(retrievedPortfolioData));
+            });
+
+            return retrievedPortfolios;
+        };
+
+        /**
+         * fetchPortfolios:         retrieves portfolios, either from storage
+         *                          or requests the portfolios from the database.
+         */
         const fetchPortfolios = async () => {
             try {
-                const results = await getPortfolios() as Portfolio[];
-                results.forEach(portfolio => {
-                    localStorage.setItem(portfolio.slug, JSON.stringify(portfolio));
-                });
-                setPortfolios(results);
+                let portfolioSlugs = await getPortfoliosPreview();
+                let retrievedPortfolios = getCachedPortfolios(portfolioSlugs as Slug[]) as Portfolio[];
+
+                if (!retrievedPortfolios) {
+                    // alert(`Retrieving Portfolio Data.`);
+                    const results = await getPortfolios() as Portfolio[];
+                    results.forEach(portfolio => {
+                        localStorage.setItem(portfolio.slug, JSON.stringify(portfolio));
+                    });
+                    setPortfolios(results);
+                } else {
+                    // alert(`Using cached portfolios.`);
+                    setPortfolios(retrievedPortfolios);
+                }
+
             } catch (error) {
                 console.log(`Error: ${error}`);
+            } finally {
+                setIsLoading(false);
             }
-        }
+        };
         fetchPortfolios();
     }, []);
     
@@ -43,6 +91,7 @@ const PortfolioIndex = () => {
                 </p>
             </div>
             <div className="rounded bg-closeiToBlack flex flex-direction-row flex-wrap justify-center gap-4">
+                {isLoading && <div>Loading. . .</div>}
                 {portfolios.map((portfolio: Portfolio, i) => {
                     return (
                         <PortfolioCard key={i} item={portfolio}></PortfolioCard>
@@ -52,6 +101,6 @@ const PortfolioIndex = () => {
             </div>
         </section>
     );
-}
+};
 
 export default PortfolioIndex;
