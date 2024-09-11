@@ -24,7 +24,7 @@ interface Params {
  * @param slug:     String, the slug value of the portfolio information we will display
  * @returns         NextPage
  */
-const Page:React.FC<Params> = ({ params: { slug } }) => {
+const Page:React.FC<Params> = ({params: {slug}}) => {
     const [item, setItem] = useState<Portfolio>();
     const [portfolioPageContent, setPortfolioPageContent] = useState<Block[]>([]);
     const [isLoading, setIsLoading] = useState(true);
@@ -49,7 +49,7 @@ const Page:React.FC<Params> = ({ params: { slug } }) => {
             }
         };
         retrievePageBlocks();
-    }, []);
+    });
 
     // Default content return
     return (
@@ -59,6 +59,7 @@ const Page:React.FC<Params> = ({ params: { slug } }) => {
             </div>
 
             {isLoading && <div>Loading. . .</div>}
+            {!isLoading && !item && notFound()}
             {!isLoading && item && <div>
                 <div className="rounded bg-zinc-800 flex flex-direction-row flex-wrap my-4 p-2">
                     <div className="p-2"> Techstack </div>
@@ -94,7 +95,6 @@ const Page:React.FC<Params> = ({ params: { slug } }) => {
                     <Link className="block text-blue-500" href="/portfolio"> go pack to portfolio </Link>
                 </div>
             </div>}
-            {!isLoading && !item && notFound()}
         </section>
     );
 }
