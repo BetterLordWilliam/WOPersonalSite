@@ -26,7 +26,7 @@ interface Params {
  * @returns         NextPage
  */
 const Page:React.FC<Params> = ({params: {slug}}) => {
-    const [item, setItem] = useState<Portfolio>(null);
+    const [item, setItem] = useState<Portfolio>();
     const [portfolioPageContent, setPortfolioPageContent] = useState<Block[]>([]);
     const [isLoading, setIsLoading] = useState(true);
 
