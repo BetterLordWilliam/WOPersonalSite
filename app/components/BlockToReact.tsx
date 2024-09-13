@@ -1,7 +1,7 @@
 import React from "react";
 
 import { ReactElement } from "react";
-import { Block } from "../types";
+import { Block } from "../portfolio/portfolio-types";
 
 interface Params {
     elementIndex: string        // For unique identification

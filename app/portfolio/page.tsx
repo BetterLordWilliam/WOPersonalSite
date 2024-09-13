@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from "react";
 
-import { Portfolio, PortfolioCache, retrieveMissing } from "../types";
+import { Portfolio,  } from "./portfolio-types";
+import { PortfolioCache, retrieveMissing } from "./portfolio-actions";
 import { PortfolioCard } from "../components/PortfolioCardTest";
 import { getPortfolios, getPortfoliosPreview, getPortfolioFromSlug } from "../../scripts/notion-connection-util.mjs";
 

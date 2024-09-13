@@ -5,7 +5,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { useState, useEffect } from "react";
 
-import { Portfolio, PortfolioCache, retrieveMissing, Block } from "../../types";
+import { Portfolio, Block } from "../portfolio-types";
+import { PortfolioCache, retrieveMissing } from "../portfolio-actions";
 import { PortfolioTag } from "../../components/PortfolioTag";
 import { ExternalLinkButton } from "../../components/ExternalLinkButton";
 import { ImageThumbnail } from "../../components/ImageThumbnail";
@@ -25,7 +26,7 @@ interface Params {
  * @returns         NextPage
  */
 const Page:React.FC<Params> = ({params: {slug}}) => {
-    const [item, setItem] = useState<Portfolio>();
+    const [item, setItem] = useState<Portfolio>(null);
     const [portfolioPageContent, setPortfolioPageContent] = useState<Block[]>([]);
     const [isLoading, setIsLoading] = useState(true);
 

@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { Portfolio } from "../types";
+import { Portfolio } from "../portfolio/portfolio-types";
 import { ImageThumbnail } from "../components/ImageThumbnail";
 
 interface PortfolioCardProps {

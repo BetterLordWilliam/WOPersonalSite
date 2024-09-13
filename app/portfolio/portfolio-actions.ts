@@ -1,21 +1,5 @@
+import { Portfolio } from "./portfolio-types";
 import { getPortfolioFromSlug } from "@/scripts/notion-connection-util.mjs";
-
-export interface Portfolio {
-    endDate: Date,
-    startDate: Date,
-    pageId: string,
-    slug: string,
-    repo: string,
-    try: string
-    tags: string[],
-    imageUrl: string,
-    title: string
-};
-
-export interface Block {
-    blockType: string,
-    blockContent: string
-};
 
 export const PortfolioCache = {
     get: (slug: string) => {
