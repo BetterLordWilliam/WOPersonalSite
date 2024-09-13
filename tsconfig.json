@@ -21,6 +21,12 @@
     ],
     "paths": {
       "@/*": ["./*"],
+      "@scripts/*": ["./scripts/*"],
+      "@public/*": ["./public/*"],
+      "@app/*": ["./app/*"],
+      "@components/*": ["./app/components/*"],
+      "@portfolio/*": ["./app/portfolio/*"],
+      "@contact/*": ["./app/contact/*"],
       "contentlayer/generated": ["./.contentlayer/generated"],
     }
   },

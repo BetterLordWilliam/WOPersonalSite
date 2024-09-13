@@ -5,13 +5,13 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { useState, useEffect } from "react";
 
-import { Portfolio, Block } from "../portfolio-types";
+import { Portfolio, Block } from "@portfolio/portfolio-types";
 import { PortfolioCache, retrieveMissing } from "../portfolio-actions";
-import { PortfolioTag } from "../../components/PortfolioTag";
-import { ExternalLinkButton } from "../../components/ExternalLinkButton";
-import { ImageThumbnail } from "../../components/ImageThumbnail";
-import { MappedContent } from "../../components/BlockToReact";
-import { getPageContent, getPortfolioFromSlug } from "@/scripts/notion-connection-util.mjs";
+import { PortfolioTag } from "@components/PortfolioTag";
+import { ExternalLinkButton } from "@components/ExternalLinkButton";
+import { ImageThumbnail } from "@components/ImageThumbnail";
+import { MappedContent } from "@components/BlockToReact";
+import { getPageContent, getPortfolioFromSlug } from "@scripts/notion-connection-util.mjs";
 
 interface Params {
     params: {

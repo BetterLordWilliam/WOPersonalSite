@@ -2,10 +2,10 @@
 
 import { useEffect, useState } from "react";
 
-import { Portfolio,  } from "./portfolio-types";
-import { PortfolioCache, retrieveMissing } from "./portfolio-actions";
-import { PortfolioCard } from "../components/PortfolioCardTest";
-import { getPortfolios, getPortfoliosPreview, getPortfolioFromSlug } from "../../scripts/notion-connection-util.mjs";
+import { Portfolio,  } from "@portfolio/portfolio-types";
+import { PortfolioCache, retrieveMissing } from "@portfolio/portfolio-actions";
+import { PortfolioCard } from "@components/PortfolioCardTest";
+import { getPortfolios, getPortfoliosPreview, getPortfolioFromSlug } from "@scripts/notion-connection-util.mjs";
 
 interface Slug {
     slug: string

@@ -1,5 +1,5 @@
-import { Portfolio } from "./portfolio-types";
-import { getPortfolioFromSlug } from "@/scripts/notion-connection-util.mjs";
+import { Portfolio } from "@portfolio/portfolio-types";
+import { getPortfolioFromSlug } from "@scripts/notion-connection-util.mjs";
 
 export const PortfolioCache = {
     get: (slug: string) => {
