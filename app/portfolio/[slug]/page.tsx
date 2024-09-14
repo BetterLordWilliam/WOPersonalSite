@@ -1,23 +1,17 @@
 "use client"
 
-import Link from "next/link";
+import Link  from "next/link";
 
-import { notFound } from "next/navigation";
+import { usePathname, useSearchParams, notFound } from "next/navigation";
 import { useState, useEffect } from "react";
 
 import { Portfolio, Block } from "@portfolio/portfolio-types";
-import { PortfolioCache, retrieveMissing } from "../portfolio-actions";
+import { PortfolioCache, retrieveMissing } from "@portfolio/portfolio-actions";
 import { PortfolioTag } from "@components/PortfolioTag";
 import { ExternalLinkButton } from "@components/ExternalLinkButton";
 import { ImageThumbnail } from "@components/ImageThumbnail";
 import { MappedContent } from "@components/BlockToReact";
-import { getPageContent, getPortfolioFromSlug } from "@scripts/notion-connection-util.mjs";
-
-interface Params {
-    params: {
-        slug: string
-    }
-};
+import { getPageContent } from "@scripts/notion-connection-util.mjs";
 
 /**
  * Page:            Takes parameter which is the slug of the card who's info we will display, displays
@@ -25,24 +19,25 @@ interface Params {
  * @param slug:     String, the slug value of the portfolio information we will display
  * @returns         NextPage
  */
-const Page:React.FC<Params> = ({params: {slug}}) => {
+const Page = () => {
     const [item, setItem] = useState<Portfolio>();
     const [portfolioPageContent, setPortfolioPageContent] = useState<Block[]>([]);
     const [isLoading, setIsLoading] = useState(true);
+
+    const searchPath = usePathname().split("/");                // Page name is slug
+    const slug = searchPath[searchPath.length - 1];             // Get the slug
 
     useEffect(() => {
         const retrievePageBlocks = async () => {
             try {
                 const retrieved = PortfolioCache.get(slug);     // Retrieve portfolio data from cache
                 const portfolio = retrieved 
-                    ? JSON.parse(retrieved) as Portfolio 
-                    : (await retrieveMissing(slug)) as Portfolio
+                    ? JSON.parse(retrieved) as Portfolio                    // Use cached portfolio data
+                    : ((await retrieveMissing(slug)) as Portfolio[])[0];    // Retrieve missing portfolio data
+                const pageBlocks = await getPageContent(portfolio.pageId) as Block[];   // Retrieve page blocks
 
-                const pageBlocks = await getPageContent(portfolio.pageId) as Block[];   // Retrieve the related page details
-
-                setItem(portfolio);                             // Save portfolio data
-                setPortfolioPageContent(pageBlocks);            // Save page content
-
+                setItem(portfolio);                         // Save portfolio data
+                setPortfolioPageContent(pageBlocks);        // Save page content
             } catch (error) {
                 console.log(`Error: ${error}`);
             } finally {

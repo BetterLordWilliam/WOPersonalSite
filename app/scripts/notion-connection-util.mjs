@@ -5,6 +5,11 @@ require("dotenv").config();
 const { Client } = require("@notionhq/client");
 const notion = new Client({ auth: process.env.NOTION_SECRET });
 
+/**
+ * getDatanase:     testing methods, returns database object.
+ * 
+ * @returns {}      database object
+ */
 export const getDatabase = async () => {
     return await notion.databases.retrieve({
         database_id: process.env.NOTION_PORTFOLIO_DATABASE_ID
@@ -12,18 +17,12 @@ export const getDatabase = async () => {
 };
 
 /**
- * getPage:     returns page of specified id.
- *    
- * @param {*} notionPageId      Notion pageID
- * @returns                     response from Notion API 
- *                              (object with blocks & metadata)
+ * extractNotionPageBlockData:      extracts relevant block data.
+ *                                  retrieves block type and content.
+ * 
+ * @param {Block[]} unprocessedNotionPageBlocks     an array of notion `Block` object
+ * @returns 
  */
-const getNotionPageBlocks = async (notionPageId) => {
-    return (await notion.blocks.children.list({
-        block_id: notionPageId
-    })).results;
-};
-
 const extractNotionPageBlockData = async (unprocessedNotionPageBlocks) => {
     if (!unprocessedNotionPageBlocks)
         return null;
@@ -40,6 +39,7 @@ const extractNotionPageBlockData = async (unprocessedNotionPageBlocks) => {
         };
         processedBlocks.push(processedBlock);
     }
+
     return processedBlocks;
 };
 
@@ -52,7 +52,6 @@ const extractNotionPageBlockData = async (unprocessedNotionPageBlocks) => {
 const extractPortfolioData = (portfolioObject) => {
     if (!portfolioObject)
         return null;
-
     let po = portfolioObject.properties;
 
     const processedPortfolio = {
@@ -73,20 +72,31 @@ const extractPortfolioData = (portfolioObject) => {
     return processedPortfolio;
 };
 
-const extractPortfolioSlug = (portfolioObject) => {
-    if (!portfolioObject)
+/**
+ * extractPortfolioSlug:        retrieves slug value of a portfolio.
+ * 
+ * @param {} portfolioObject    portfolio query response
+ * @returns {string}              Object that has contains portfolio slug   
+ */
+const extractPortfolioSlugs = (portfolioObjects) => {
+    if (!portfolioObjects)
         return null;
+    let slugs = [];
 
-    let po = portfolioObject.properties;
+    portfolioObjects.forEach(portfolioObject => {
+        let po = portfolioObject.properties;
+        slugs.push(po.slug.rich_text[0].plain_text);
+    });
 
-    const processedPortfolio = {
-        slug: po.slug.rich_text[0].plain_text
-    };
-
-    // console.log(processedPortfolio);
-    return processedPortfolio;
+    return slugs;
 };
 
+/**
+ * getPortfolios:               retrieves all portfolio data using
+ *                              the Notion API.
+ * 
+ * @returns {Portfolio[]}       Portfolio Objects
+ */
 export const getPortfolios = async () => {
    return (await notion.databases.query({
         database_id: process.env.NOTION_PORTFOLIO_DATABASE_ID,
@@ -113,7 +123,25 @@ export const getPortfolios = async () => {
     });
 };
 
-export const getPortfolioFromSlug = async (slug) => {
+/**
+ * getPortfolioFromSlug:        retrieve Portfolio data using the Notion API
+ *                              depending on slugs. Retrieve from one or several slugs.
+ * 
+ * @param {string | string[]} slugs     one or many Slugs (pbject with string values)
+ * @returns {Portfolio}                 Portfolio, {} object with certain properties
+ */
+export const getPortfolioFromSlug = async (slugs) => {
+    let slugQuery = [];     // Object to send as a request payload
+
+    slugs.forEach(slug =>   // Construct an object containing the conditions to match any slugs
+        slugQuery.push({ 
+            property: "slug",
+            rich_text: { 
+                equals: slug
+            } 
+        })
+    );
+
     return (await notion.databases.query({
         database_id: process.env.NOTION_PORTFOLIO_DATABASE_ID,
         filter: {
@@ -124,12 +152,7 @@ export const getPortfolioFromSlug = async (slug) => {
                         equals: true
                     }
                 },
-                {
-                    property: "slug",
-                    rich_text: {
-                        equals: slug.toString()
-                    }
-                }
+                {or: slugQuery}
             ]
         }
     })).results.map((result) => {
@@ -137,21 +160,35 @@ export const getPortfolioFromSlug = async (slug) => {
     });
 };
 
-export const getPortfoliosPreview = async () => {
-    return (await notion.databases.query({
-        database_id: process.env.NOTION_PORTFOLIO_DATABASE_ID,
-        filter: {
-            property: "enabled",
-            checkbox: {
-                equals: true
+/**
+ * getPortoliosSlugs:       retrieves complete list of slugs using the
+ *                          Notion API for database portfolios.
+ * 
+ * @returns {string[]}        Arrays of Slug Objects
+ */
+export const getPortfolioSlugs = async () => {
+    return extractPortfolioSlugs(
+        (await notion.databases.query({
+            database_id: process.env.NOTION_PORTFOLIO_DATABASE_ID,
+            filter: {
+                property: "enabled",
+                checkbox: {
+                    equals: true
+                }
             }
-        }
-    })).results.map((result) => {
-        return extractPortfolioSlug(result);
-    });
+        })).results
+    );
 };
 
+/**
+ * getPageContent:          retrieves the Blocks of a notion page 
+ *                          using the Notion API given the notion page id.
+ * 
+ * @param {string} notionPageId     page id of a notion db page
+ * @returns {Block[]}               Array of Block objects
+ */
 export const getPageContent = async (notionPageId) => {
-    let notionPageBlocks = await getNotionPageBlocks(notionPageId);
-    return (await extractNotionPageBlockData(notionPageBlocks));
+    const unprocBlocks = await notion.blocks.children.list({block_id: notionPageId});
+    const procBlocks = await extractNotionPageBlockData(unprocBlocks.results);
+    return procBlocks;
 };

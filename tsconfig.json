@@ -21,7 +21,7 @@
     ],
     "paths": {
       "@/*": ["./*"],
-      "@scripts/*": ["./scripts/*"],
+      "@scripts/*": ["./app/scripts/*"],
       "@public/*": ["./public/*"],
       "@app/*": ["./app/*"],
       "@components/*": ["./app/components/*"],

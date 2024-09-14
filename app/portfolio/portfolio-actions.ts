@@ -16,11 +16,16 @@ export const PortfolioCache = {
  *                  portfolio data. This is a helper function,
  *                  not sure if it will stay here.
  * 
+ *                  Basically a wrapper function for the getPortfolioFromSlug
+ *                  server-method. Caches results.
+ * 
  * @param slug 
- * @returns 
+ * @returns
  */
-export const retrieveMissing = async (slug: string) => {
-    const portfolioData = (await getPortfolioFromSlug(slug))[0] as Portfolio;
-    PortfolioCache.set(slug, portfolioData);
+export const retrieveMissing = async (slug: string | string[]) => {
+    if (slug.length === 0)
+        return;
+    const portfolioData = (await getPortfolioFromSlug(slug)) as Portfolio[];
+    portfolioData.forEach(pd => PortfolioCache.set(pd.slug, pd));
     return portfolioData;
 };

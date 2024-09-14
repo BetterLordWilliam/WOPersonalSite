@@ -2,14 +2,10 @@
 
 import { useEffect, useState } from "react";
 
-import { Portfolio,  } from "@portfolio/portfolio-types";
+import { Portfolio } from "@portfolio/portfolio-types";
 import { PortfolioCache, retrieveMissing } from "@portfolio/portfolio-actions";
 import { PortfolioCard } from "@components/PortfolioCardTest";
-import { getPortfolios, getPortfoliosPreview, getPortfolioFromSlug } from "@scripts/notion-connection-util.mjs";
-
-interface Slug {
-    slug: string
-};
+import { getPortfolioSlugs} from "@scripts/notion-connection-util.mjs";
 
 /**
  * PortfolioIndex:      Renders previews of portfolio pages in a gallery view.
@@ -27,24 +23,20 @@ const PortfolioIndex = () => {
          */
         const fetchPortfolios = async () => {
             try {
-                const portfolioSlugs = await getPortfoliosPreview() as Slug[];  // Retrieve list of portfolio slugs
-                const retrievedCached: Portfolio[] = portfolioSlugs             // Retrieve portfolio data from slug list
-                    .map((slug: Slug) => PortfolioCache.get(slug.slug)) 
+                const portfolioSlugs = (await getPortfolioSlugs()) as string[];     // Retrieve list of portfolio slugs
+                const retrievedCached: Portfolio[] = portfolioSlugs                 // Retrieve portfolio data from slug list
+                    .map((slug: string) => PortfolioCache.get(slug)) 
                     .filter(Boolean)
-                    .map((unparsed) => JSON.parse(unparsed as string) as Portfolio);        // Parse and cast as Portfolio type
-                
-                const missingPortfolios = portfolioSlugs.filter((slug: Slug) => 
-                    !retrievedCached.some((portfolio) => portfolio.slug === slug.slug));    // retrieve slugs of missing portfolios
+                    .map((unparsed) => (JSON.parse(unparsed as string)) as Portfolio);          // Parse and cast as Portfolio type
 
-                // Request portfolio data for missing slugs
-                // TODO: Create a list of missing slugs and query from DB at once
-                const retrievedFromNotionDB = await Promise.all(
-                    missingPortfolios.map(
-                        async (missingPortfolio) => (await retrieveMissing(missingPortfolio.slug)) as Portfolio
-                ));
-                
+                const missingPortfolioSlugs = portfolioSlugs.filter((slug: string) => 
+                    !retrievedCached.some((portfolio) => portfolio.slug === slug)
+                );          // retrieve slugs of missing portfolios
+                const retrievedFromNotionDB: Portfolio[] = missingPortfolioSlugs.length
+                    ? (await retrieveMissing(missingPortfolioSlugs)) as Portfolio[]
+                    : [];   // Retrieve missing portfolio data from Notion
+
                 setPortfolios([...retrievedCached, ...retrievedFromNotionDB]);
-
             } catch (error) {
                 console.log(`Error: ${error}`);
             } finally {
