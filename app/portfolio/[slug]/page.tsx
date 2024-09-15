@@ -6,12 +6,14 @@ import { usePathname, useSearchParams, notFound } from "next/navigation";
 import { useState, useEffect } from "react";
 
 import { Portfolio, Block } from "@portfolio/portfolio-types";
-import { PortfolioCache, getPortfolioData } from "@portfolio/portfolio-actions";
+import { getPortfolioData } from "@portfolio/portfolio-actions";
 import { PortfolioTag } from "@components/PortfolioTag";
 import { ExternalLinkButton } from "@components/ExternalLinkButton";
 import { ImageThumbnail } from "@components/ImageThumbnail";
 import { MappedContent } from "@components/BlockToReact";
 import { getPageContent } from "@scripts/notion-connection-util.mjs";
+
+import Loading from "@components/Loading";
 
 /**
  * Page:            Takes parameter which is the slug of the card who's info we will display, displays
@@ -51,7 +53,7 @@ const Page = () => {
                 <h1 className="font-bold text-3xl">{item?.title}</h1>
             </div>
 
-            {isLoading && <div>Loading. . .</div>}
+            <div className="flex justify-center">{isLoading && <Loading />}</div>
             {!isLoading && !item && notFound()}
             {!isLoading && item && <div>
                 <div className="rounded bg-zinc-800 flex flex-direction-row flex-wrap my-4 p-2">

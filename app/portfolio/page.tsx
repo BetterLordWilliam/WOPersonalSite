@@ -3,9 +3,11 @@
 import { useEffect, useState } from "react";
 
 import { Portfolio } from "@portfolio/portfolio-types";
-import { PortfolioCache, getPortfolioData } from "@portfolio/portfolio-actions";
-import { PortfolioCard } from "@components/PortfolioCardTest";
+import { getPortfolioData } from "@portfolio/portfolio-actions";
+import { PortfolioCard, LoadingPortfolioCard } from "@components/PortfolioCardTest";
 import { getPortfolioSlugs} from "@scripts/notion-connection-util.mjs";
+
+import Loading from "@components/Loading";
 
 /**
  * PortfolioIndex:      Renders previews of portfolio pages in a gallery view.
@@ -14,16 +16,28 @@ import { getPortfolioSlugs} from "@scripts/notion-connection-util.mjs";
  */
 const PortfolioIndex = () => {
     const [portfolios, setPortfolios] = useState<Portfolio[]>([]);
+    const [ghostPortfolios, setGhostPortfolios] = useState<string[]>([]);
     const [isLoading, setIsLoading] = useState<Boolean>(true);
 
     useEffect(() => {
+        /**
+         * fetchPortfolioSlugs:         retrieves list of the portfolio slugs to fetch.
+         *                              helper method.
+         * 
+         * @returns {string[]} slugs    slug list
+         */
+        const fetchPortfoliosSlugs = async () => {
+            let slugs = (await getPortfolioSlugs()) as string[];
+            setGhostPortfolios(slugs);
+            return slugs;
+        };
         /**
          * fetchPortfolios:         retrieves portfolios, either from storage
          *                          or requests the portfolios from the database.
          */
         const fetchPortfolios = async () => {
             try {
-                const portfolioSlugs = (await getPortfolioSlugs()) as string[];     // Retrieve list of portfolio slugs
+                const portfolioSlugs = await fetchPortfoliosSlugs();     // Retrieve list of portfolio slugs
                 setPortfolios(await getPortfolioData(portfolioSlugs) as Portfolio[]);
                 
             } catch (error) {
@@ -49,8 +63,9 @@ const PortfolioIndex = () => {
                 </p>
             </div>
             <div className="rounded bg-closeiToBlack flex flex-direction-row flex-wrap justify-center gap-4">
-                {isLoading && <div>Loading. . .</div>}
-                {portfolios.map((portfolio: Portfolio, i) => {
+                {isLoading && ghostPortfolios.length === 0 && <Loading />}
+                {isLoading && ghostPortfolios.map(gp => <LoadingPortfolioCard />)}
+                {!isLoading && portfolios.map((portfolio: Portfolio, i) => {
                     return (
                         <PortfolioCard key={i} item={portfolio}></PortfolioCard>
                     );

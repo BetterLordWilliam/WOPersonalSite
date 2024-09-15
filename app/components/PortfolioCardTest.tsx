@@ -3,12 +3,25 @@ import Link from "next/link";
 import { Portfolio } from "@portfolio/portfolio-types";
 import { ImageThumbnail } from "@components/ImageThumbnail";
 
+import Loading from "@components/Loading";
+
 interface PortfolioCardProps {
     item: Portfolio
 }
 
-export const PortfolioCard: React.FC<PortfolioCardProps> = ({item}) => {
+export const LoadingPortfolioCard = () => {
+    return (
+        <div className="max-w-80">
+            <div>
+                <div className="m-1 p-3 rounded">
+                    <Loading />
+                </div>
+            </div>
+        </div>
+    );
+};
 
+export const PortfolioCard: React.FC<PortfolioCardProps> = ({item}) => {
     return (
         <div className="max-w-80">
             <Link href={`/portfolio/${item.slug}`}>
@@ -23,3 +36,5 @@ export const PortfolioCard: React.FC<PortfolioCardProps> = ({item}) => {
         </div>
     );
 }
+
+export default PortfolioCard;

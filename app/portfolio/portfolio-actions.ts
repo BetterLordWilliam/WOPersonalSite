@@ -1,7 +1,7 @@
 import { Portfolio } from "@portfolio/portfolio-types";
 import { getPortfolioFromSlug } from "@scripts/notion-connection-util.mjs";
 
-export const PortfolioCache = {
+const PortfolioCache = {
     get: (slug: string) => {
         return localStorage.getItem(slug)
     },
