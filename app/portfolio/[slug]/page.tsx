@@ -6,7 +6,7 @@ import { usePathname, useSearchParams, notFound } from "next/navigation";
 import { useState, useEffect } from "react";
 
 import { Portfolio, Block } from "@portfolio/portfolio-types";
-import { PortfolioCache, retrieveMissing } from "@portfolio/portfolio-actions";
+import { PortfolioCache, getPortfolioData } from "@portfolio/portfolio-actions";
 import { PortfolioTag } from "@components/PortfolioTag";
 import { ExternalLinkButton } from "@components/ExternalLinkButton";
 import { ImageThumbnail } from "@components/ImageThumbnail";
@@ -30,11 +30,8 @@ const Page = () => {
     useEffect(() => {
         const retrievePageBlocks = async () => {
             try {
-                const retrieved = PortfolioCache.get(slug);     // Retrieve portfolio data from cache
-                const portfolio = retrieved 
-                    ? JSON.parse(retrieved) as Portfolio                    // Use cached portfolio data
-                    : ((await retrieveMissing(slug)) as Portfolio[])[0];    // Retrieve missing portfolio data
-                const pageBlocks = await getPageContent(portfolio.pageId) as Block[];   // Retrieve page blocks
+                const portfolio = ((await getPortfolioData(slug)) as Portfolio[])[0];       // Retrieve portfolioData
+                const pageBlocks = (await getPageContent(portfolio.pageId)) as Block[];     // Retrieve page blocks
 
                 setItem(portfolio);                         // Save portfolio data
                 setPortfolioPageContent(pageBlocks);        // Save page content

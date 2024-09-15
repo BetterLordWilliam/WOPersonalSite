@@ -22,10 +22,28 @@ export const PortfolioCache = {
  * @param slug 
  * @returns
  */
-export const retrieveMissing = async (slug: string | string[]) => {
-    if (slug.length === 0)
+export const getPortfolioData = async (slugs: string | string[]) => {
+    if (slugs.length === 0)
         return;
-    const portfolioData = (await getPortfolioFromSlug(slug)) as Portfolio[];
-    portfolioData.forEach(pd => PortfolioCache.set(pd.slug, pd));
-    return portfolioData;
+
+    // Retrieve portfolio data from slug list
+    const slugArray = Array.isArray(slugs) ? slugs : [slugs];
+    const retrievedCached: Portfolio[] = slugArray               
+        .map((slug: string) => PortfolioCache.get(slug)) 
+        .filter(Boolean)
+        .map((unparsed) => (JSON.parse(unparsed as string)) as Portfolio);
+    
+    // retrieve slugs of missing portfolios
+    // Retrieve missing portfolio data from Notion
+    const missingPortfolioSlugs = slugArray.filter((slug: string) => 
+        !retrievedCached.some((portfolio) => portfolio.slug === slug)
+    );                                                      
+    const retrievedFromNotionDB: Portfolio[] = missingPortfolioSlugs.length
+        ? (await getPortfolioFromSlug(missingPortfolioSlugs)) as Portfolio[]
+        : [];                                              
+
+    // Updated the cache
+    retrievedFromNotionDB.forEach(pd => PortfolioCache.set(pd.slug, pd));
+
+    return [...retrievedCached, ...retrievedFromNotionDB];
 };

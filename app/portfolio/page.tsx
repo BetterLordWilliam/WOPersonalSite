@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 import { Portfolio } from "@portfolio/portfolio-types";
-import { PortfolioCache, retrieveMissing } from "@portfolio/portfolio-actions";
+import { PortfolioCache, getPortfolioData } from "@portfolio/portfolio-actions";
 import { PortfolioCard } from "@components/PortfolioCardTest";
 import { getPortfolioSlugs} from "@scripts/notion-connection-util.mjs";
 
@@ -24,19 +24,8 @@ const PortfolioIndex = () => {
         const fetchPortfolios = async () => {
             try {
                 const portfolioSlugs = (await getPortfolioSlugs()) as string[];     // Retrieve list of portfolio slugs
-                const retrievedCached: Portfolio[] = portfolioSlugs                 // Retrieve portfolio data from slug list
-                    .map((slug: string) => PortfolioCache.get(slug)) 
-                    .filter(Boolean)
-                    .map((unparsed) => (JSON.parse(unparsed as string)) as Portfolio);          // Parse and cast as Portfolio type
-
-                const missingPortfolioSlugs = portfolioSlugs.filter((slug: string) => 
-                    !retrievedCached.some((portfolio) => portfolio.slug === slug)
-                );          // retrieve slugs of missing portfolios
-                const retrievedFromNotionDB: Portfolio[] = missingPortfolioSlugs.length
-                    ? (await retrieveMissing(missingPortfolioSlugs)) as Portfolio[]
-                    : [];   // Retrieve missing portfolio data from Notion
-
-                setPortfolios([...retrievedCached, ...retrievedFromNotionDB]);
+                setPortfolios(await getPortfolioData(portfolioSlugs) as Portfolio[]);
+                
             } catch (error) {
                 console.log(`Error: ${error}`);
             } finally {
