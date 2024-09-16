@@ -44,7 +44,7 @@ const Page = () => {
             }
         };
         retrievePageBlocks();
-    });
+    }, [slug]);
 
     // Default content return
     return (
@@ -69,7 +69,9 @@ const Page = () => {
                 
                 <ImageThumbnail
                     imageUrl={item.imageUrl} 
-                    altText={item.slug} />
+                    altText={item.slug}
+                    wSize={250}
+                    hSize={250} />
                 <div>
                     {portfolioPageContent.map((portfolioPageBlock: Block, i: number) => {
                         return (

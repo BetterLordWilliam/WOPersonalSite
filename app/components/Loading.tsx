@@ -5,7 +5,6 @@ const spinnerPath = "/spinner.gif";
 const Loading = () => {
     return (
         <div className="p-5">
-            <p>Loading</p>
             <Image src={spinnerPath} alt="test"
                 width={50}
                 height={50}/>
