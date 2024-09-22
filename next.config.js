@@ -4,8 +4,13 @@
 const nextConfig = {
   /* config options here */
   images: {
-    domains: [ "i.postimg.cc" ]
+    remotePatterns: [ 
+      {
+        protocol: "https",
+        hostname: "i.postimg.cc"
+      }
+    ]
   }
 }
- 
+
 module.exports = nextConfig

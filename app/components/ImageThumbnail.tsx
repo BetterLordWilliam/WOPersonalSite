@@ -1,7 +1,5 @@
 import NextImage from "next/image";
 
-import { useState, useEffect } from "react";
-
 interface ImageThumbnailProps {
     imageUrl: string,
     altText: string,
