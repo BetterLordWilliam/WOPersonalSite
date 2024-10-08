@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { Portfolio } from "@portfolio/portfolio-types";
 import { getPortfolioData } from "@portfolio/portfolio-actions";
 import { PortfolioCard } from "@components/PortfolioCardTest";
-import { getPortfolioSlugs} from "@scripts/notion-connection-util.mjs";
+import { getPortfolioSlugs} from "@scripts/get-portfolios.mjs";
 
 import Loading from "@components/Loading";
 

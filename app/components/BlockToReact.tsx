@@ -11,7 +11,9 @@ interface Params {
 // Mapping object notionBlokc -> html
 const notionBlockToHTML: {[key: string]: string} = {
     heading_2: "h2",
-    paragraph: "p"
+    paragraph: "p",
+    bulleted_list_item: "li",
+    code: "code"
 };
 
 /**

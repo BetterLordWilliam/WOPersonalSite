@@ -11,7 +11,7 @@ import { PortfolioTag } from "@components/PortfolioTag";
 import { ExternalLinkButton } from "@components/ExternalLinkButton";
 import { ImageThumbnail } from "@components/ImageThumbnail";
 import { MappedContent } from "@components/BlockToReact";
-import { getPageContent } from "@scripts/notion-connection-util.mjs";
+import { getPageContent } from "@scripts/get-blocks.mjs";
 
 import Loading from "@components/Loading";
 
