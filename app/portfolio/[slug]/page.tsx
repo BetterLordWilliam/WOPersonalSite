@@ -27,7 +27,7 @@ const Page = () => {
     const [isLoading, setIsLoading] = useState(true);
 
     const searchPath = usePathname().split("/");                // Page name is slug
-    const slug = searchPath[searchPath.length - 1];             // Get the slug
+    const slug = searchPath[searchPath.length - 1];             // Get the slug, last part of the url
 
     useEffect(() => {
         const retrievePageBlocks = async () => {
@@ -72,7 +72,7 @@ const Page = () => {
                     altText={item.slug}
                     wSize={250}
                     hSize={250} />
-                <div>
+                {/* <div>
                     {portfolioPageContent.map((portfolioPageBlock: Block, i: number) => {
                         return (
                             <MappedContent
@@ -81,7 +81,7 @@ const Page = () => {
                                 unprocessedBlock={portfolioPageBlock} />
                         );
                     })}
-                </div>
+                </div> */}
 
                 <div className="rounded bg-zinc-800 flex my-2 p-2">
                     <div className="p-2"> Links </div>

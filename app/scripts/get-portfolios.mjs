@@ -4,7 +4,6 @@ require("dotenv").config();
 
 const { Client } = require("@notionhq/client");
 const notion = new Client({ auth: process.env.NOTION_SECRET });
-
 const portfoliodbID = process.env.NOTION_PORTFOLIO_DATABASE_ID;
 const portfoliodbFields = JSON.parse(process.env.NOTION_PORTFOLIO_DATABASE_FIELDS);
 
