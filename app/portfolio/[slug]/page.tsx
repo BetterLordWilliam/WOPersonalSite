@@ -72,16 +72,8 @@ const Page = () => {
                     altText={item.slug}
                     wSize={250}
                     hSize={250} />
-                {/* <div>
-                    {portfolioPageContent.map((portfolioPageBlock: Block, i: number) => {
-                        return (
-                            <MappedContent
-                                key={i}
-                                elementIndex={`${slug}-${i}`}
-                                unprocessedBlock={portfolioPageBlock} />
-                        );
-                    })}
-                </div> */}
+                <MappedContent
+                    pageBlocks={portfolioPageContent} />
 
                 <div className="rounded bg-zinc-800 flex my-2 p-2">
                     <div className="p-2"> Links </div>

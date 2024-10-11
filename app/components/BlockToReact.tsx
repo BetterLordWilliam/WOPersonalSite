@@ -1,19 +1,11 @@
 import React from "react";
+import JSX from "react";
 
-import { ReactElement } from "react";
+import { ReactElement, DetailedReactHTMLElement } from "react";
 import { Block } from "../portfolio/portfolio-types";
 
 interface Params {
-    elementIndex: string        // For unique identification
-    unprocessedBlock: Block     // The Notion Content to be turned into TSX
-};
-
-// Mapping object notionBlokc -> html
-const notionBlockToHTML: {[key: string]: string} = {
-    heading_2: "h2",
-    paragraph: "p",
-    bulleted_list_item: "li",
-    code: "code"
+    pageBlocks: Block[]     // The Notion Content to be turned into TSX
 };
 
 /**
@@ -26,19 +18,44 @@ const notionBlockToHTML: {[key: string]: string} = {
  * @param index         number, integer used for unique element identification 
  * @returns             ReactElement
  */
-const parseBlockToHTML = (block: Block, index: string): ReactElement => {
-    let element: ReactElement = React.createElement(
-        notionBlockToHTML[block.blockType] || "div",
-        { key: index },
-        block.blockContent
-    );
-    return element;
+const parseBlockToHTML = (index: number | string, block: any): string | ReactElement => {
+    console.log(block);
+    
+    if (typeof block == "string") {
+        return block;
+    }
+    if (typeof block["blockType"] == "string" && typeof block["blockContent"] == "string") {
+        return JSX.createElement(
+            block["blockType"],
+            {key: index + block["blockType"]},
+            block["blockContent"]);
+    } else if (typeof block["blockType"] == "string") {
+        let childElements = block["blockContent"].map((blockContent: Block, i: number) => parseBlockToHTML(i, blockContent));
+        let element = JSX.createElement(
+            block["blockType"],
+            {key: index + block["blockType"]},
+            childElements);
+        return element;
+    }
 };
 
-export const MappedContent:React.FC<Params> = ({ elementIndex, unprocessedBlock } ) => {
+const parseBlocksToHTML = (blocks: Block[]): ReactElement => {
+    let parsed: ReactElement[] = [];
+
+    blocks.map((block: Block, i) => {
+        parsed.push(parseBlockToHTML(i, block));
+    });
+
+    return JSX.createElement(
+        "div",
+        {key: "parentOfParsedContent"},
+        parsed);
+};
+
+export const MappedContent:React.FC<Params> = ({pageBlocks} ) => {
     return (
         <div>
-            { parseBlockToHTML(unprocessedBlock, elementIndex) }
+            {parseBlocksToHTML(pageBlocks)}
         </div>
     );
 };
