@@ -46,17 +46,12 @@ const createElement = (block: Block) => {
     }
 };
 
-const parseBlocksToHTML = (blocks: Block[]): ReactElement => {
+const parseBlocksToHTML = (blocks: Block[]) => {
     let parsed: ReactElement[] = [];
     blocks.forEach((block: Block) => {
         parsed.push(createElement(block));
     });
-    // console.log(parsed);
-
-    return JSX.createElement(
-        "div",
-        {key: "parentOfParsedContent"},
-        parsed);
+    return parsed;
 };
 
 export const MappedContent:React.FC<Params> = ({pageBlocks} ) => {
