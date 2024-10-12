@@ -9,7 +9,7 @@ interface Params {
 };
 
 const createElementNested = (block: Block) => {
-    console.log(block);
+    // console.log(block);
     if (block["blockType"].length == 1) {
         block["blockType"] = block["blockType"][0];
         return JSX.createElement(
@@ -56,7 +56,7 @@ const parseBlocksToHTML = (blocks: Block[]) => {
 
 export const MappedContent:React.FC<Params> = ({pageBlocks} ) => {
     return (
-        <div>
+        <div className="px-5">
             {parseBlocksToHTML(pageBlocks)}
         </div>
     );

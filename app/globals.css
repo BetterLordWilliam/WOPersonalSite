@@ -26,3 +26,19 @@ h3 {
 p {
     padding-bottom: 8px;
 }
+
+code {
+    padding-bottom: 8px;
+}
+
+ul {
+    list-style-type: circle;
+    list-style-position: inside;
+    padding-bottom: 8px;
+}
+
+ol {
+    list-style-type: decimal;
+    list-style-position: inside;
+    padding-bottom: 8px;
+}
