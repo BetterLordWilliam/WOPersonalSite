@@ -75,7 +75,6 @@ const processRichText = (rich_text) => {
 const processListBlock = (block, prevBlock) => {
     let blockObj = {};
     let blockType = block["type"];
-    let blockContent = block[blockType]["rich_text"];
     let tmppar = groupTypeParent[blockType];
 
     if (tmppar == prevBlock["blockType"]) {
