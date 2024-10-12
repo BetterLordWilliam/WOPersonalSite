@@ -8,43 +8,50 @@ interface Params {
     pageBlocks: Block[]     // The Notion Content to be turned into TSX
 };
 
-/**
- *  parseBlockToHTML:   Parses a Notion block to React element.
- *                      Uses notionBlockToHTML object as a reference.
- *                      If an unknown type Notion block type is passed
- *                      into the method a div React element is returned. 
- *  
- * @param block         Block, a notion block
- * @param index         number, integer used for unique element identification 
- * @returns             ReactElement
- */
-const parseBlockToHTML = (index: number | string, block: any): string | ReactElement => {
+const createElementNested = (block: Block) => {
     console.log(block);
-    
-    if (typeof block == "string") {
-        return block;
-    }
-    if (typeof block["blockType"] == "string" && typeof block["blockContent"] == "string") {
+    if (block["blockType"].length == 1) {
+        block["blockType"] = block["blockType"][0];
         return JSX.createElement(
             block["blockType"],
-            {key: index + block["blockType"]},
-            block["blockContent"]);
-    } else if (typeof block["blockType"] == "string") {
-        let childElements = block["blockContent"].map((blockContent: Block, i: number) => parseBlockToHTML(i, blockContent));
-        let element = JSX.createElement(
-            block["blockType"],
-            {key: index + block["blockType"]},
-            childElements);
-        return element;
+            {key: block["blockType"] + Math.random()},
+            createElement(block));
+    } else {
+        let temp = block["blockType"].shift();
+        return JSX.createElement(
+            temp,
+            {key: temp + Math.random()},
+            createElementNested(block));
+    }
+};
+
+const createElement = (block: Block) => {
+    if (typeof block == "string")
+        return block;
+    if (typeof block["blockType"] == typeof [])
+        return createElementNested(block);
+
+    if (typeof block["blockType"] == "string") {
+        if (typeof block["blockContent"] == "string") {
+            return JSX.createElement(
+                block["blockType"],
+                {key: block["blockType"] + Math.random()},
+                block["blockContent"]);
+        } else {
+            return JSX.createElement(
+                block["blockType"],
+                {key: block["blockType"] + Math.random()},
+                block["blockContent"].map((subBlock: Block) => createElement(subBlock)));
+        }
     }
 };
 
 const parseBlocksToHTML = (blocks: Block[]): ReactElement => {
     let parsed: ReactElement[] = [];
-
-    blocks.map((block: Block, i) => {
-        parsed.push(parseBlockToHTML(i, block));
+    blocks.forEach((block: Block) => {
+        parsed.push(createElement(block));
     });
+    // console.log(parsed);
 
     return JSX.createElement(
         "div",

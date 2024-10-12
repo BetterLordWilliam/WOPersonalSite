@@ -11,6 +11,6 @@ export interface Portfolio {
 };
 
 export interface Block {
-    blockType: string,
+    blockType: string | string[],
     blockContent: (Block | string)[] | string
 };
