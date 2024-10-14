@@ -34,7 +34,7 @@ const Page = () => {
             try {
                 const portfolio = ((await getPortfolioData(slug)) as Portfolio[])[0];   // Retrieve portfolioData
                 const pageBlocks= (await getPageContent(portfolio.pageId));            // Retrieve page blocks
-                
+
                 setItem(portfolio);                         // Save portfolio data
                 setPortfolioPageContent(pageBlocks);        // Save page content
             } catch (error) {

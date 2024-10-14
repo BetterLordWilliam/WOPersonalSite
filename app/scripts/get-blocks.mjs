@@ -2,7 +2,6 @@
 
 require("dotenv").config();
 
-const FileSystem = require("fs");
 const { Client } = require("@notionhq/client");
 const notion = new Client({ auth: process.env.NOTION_SECRET });
 
@@ -15,6 +14,7 @@ const groupTypeParent = {
     numbered_list_item: "ol",
 };
 const notionBlockToHTML = {
+    table: "table",
     heading_1: "h1",
     heading_2: "h2",
     heading_3: "h3",

@@ -3,12 +3,12 @@ import { getPortfolioFromSlug } from "@scripts/get-portfolios.mjs";
 
 const PortfolioCache = {
     get: (slug: string) => {
-        return localStorage.getItem(slug)
+        return sessionStorage.getItem(slug)
     },
     set: (slug: string, portfolio: Portfolio) => {
-        localStorage.setItem(slug, JSON.stringify(portfolio))
+        sessionStorage.setItem(slug, JSON.stringify(portfolio))
     },
-    clear: () => { localStorage.clear() }
+    clear: () => { sessionStorage.clear() }
 };
 
 /**
