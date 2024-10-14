@@ -2,6 +2,7 @@
 
 require("dotenv").config();
 
+const FileSystem = require("fs");
 const { Client } = require("@notionhq/client");
 const notion = new Client({ auth: process.env.NOTION_SECRET });
 
@@ -106,6 +107,7 @@ const extractNotionPageBlockData = (unprocessedNotionPageBlocks) => {
             ? processListBlock(block, prevBlock)
             : makeBlockObj(block);
         if (processedBlock) {
+            console.log(processedBlock["blockContent"]);
             prevBlock = processedBlock;
             processedBlocks.push(processedBlock);
         }
@@ -119,11 +121,11 @@ const extractNotionPageBlockData = (unprocessedNotionPageBlocks) => {
  *                          using the Notion API given the notion page id.
  * 
  * @param {string} notionPageId     page id of a notion db page
- * @returns {Block[]}               Array of Block objects
+ * @returns {Block[]}                JSON string Array of Block objects
  */
 export const getPageContent = async (notionPageId) => {
     const unprocBlocks = await notion.blocks.children.list({block_id: notionPageId});
     const procBlocks = extractNotionPageBlockData(unprocBlocks.results);
-    console.log(procBlocks);
+    
     return procBlocks;
 };

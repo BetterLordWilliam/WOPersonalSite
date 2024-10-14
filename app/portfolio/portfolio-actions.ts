@@ -20,7 +20,7 @@ const PortfolioCache = {
  *                  server-method. Caches results.
  * 
  * @param slug 
- * @returns
+ * @returns {Portfolio[]}
  */
 export const getPortfolioData = async (slugs: string | string[]) => {
     if (slugs.length === 0)

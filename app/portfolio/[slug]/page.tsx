@@ -32,9 +32,9 @@ const Page = () => {
     useEffect(() => {
         const retrievePageBlocks = async () => {
             try {
-                const portfolio = ((await getPortfolioData(slug)) as Portfolio[])[0];       // Retrieve portfolioData
-                const pageBlocks = (await getPageContent(portfolio.pageId)) as Block[];     // Retrieve page blocks
-
+                const portfolio = ((await getPortfolioData(slug)) as Portfolio[])[0];   // Retrieve portfolioData
+                const pageBlocks= (await getPageContent(portfolio.pageId));            // Retrieve page blocks
+                
                 setItem(portfolio);                         // Save portfolio data
                 setPortfolioPageContent(pageBlocks);        // Save page content
             } catch (error) {
