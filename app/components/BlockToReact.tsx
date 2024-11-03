@@ -1,89 +1,78 @@
 import React, { ReactNode } from "react";
-import JSX from "react";
 
-import { ReactElement, DetailedReactHTMLElement } from "react";
-import { Block } from "../portfolio/portfolio-types";
+// WANT TO IMPROVE THIS LATER!
+// For now, only capable or processing basic stuff. Doesn't even process lists correctly!
 
 interface Params {
-    pageBlocks: Block[]     // The Notion Content to be turned into TSX
+    pageBlocks: any     // The Notion Content to be turned into TSX
 };
 
-const createElementNested = (block: Block, cur: number): ReactElement | string => {
-    let element: ReactElement | string;
-    let temp = block["blockType"][cur];
-    // console.log(temp);
-
-    if (cur == block["blockType"].length - 1) {
-        element = JSX.createElement(
-            temp,
-            {key: temp + Math.random()},
-            createElement(block["blockContent"]));
-        // console.log("Final");
-        // console.log(block);
-        // console.log(element);
-        return element;
-    } else {
-        element = JSX.createElement(
-            temp,
-            {key: temp + Math.random()},
-            createElementNested(block, ++cur));
-        // console.log("Nested");
-        // console.log(temp);
-        // console.log(block);
-        // console.log(element);
-        return element;
-    }
+const groupType = [
+    'bulleted_list_item',
+    'numbered_list_item',
+];
+const groupTypeParent: {[key: string]: string} = {
+    bulleted_list_item: "ul",
+    numbered_list_item: "ol",
+};
+const notionBlockToHTML: {[key: string]: string} = {
+    table: "table",
+    heading_1: "h1",
+    heading_2: "h2",
+    heading_3: "h3",
+    heading_4: "h4",
+    paragraph: "p",
+    bulleted_list_item: "li",
+    numbered_list_item: "li",
+    code: "code",
+    bold: "b",
+    italic: "i",
 };
 
-const createElement = (block: Block | string): ReactElement | string => {
-    let element;
-    
-    if (typeof block == "string")
-        return block;
-    if (typeof block["blockType"] == typeof []) {
-        element = createElementNested(block, 0);
-        // console.log(element);
-        return element;
+const getAnnotations = (annotationsRaw: any) => {
+    let annotations: string[] = []; 
+    if (!annotationsRaw)
+        null;
 
-    } else {
-        if (typeof block["blockContent"] == "string") {
-            element =  JSX.createElement(
-                block["blockType"],
-                {key: block["blockType"] + Math.random()},
-                block["blockContent"]);
-            // console.log(element);
-            return element
-        } else {
-            element = JSX.createElement(
-                block["blockType"],
-                {key: block["blockType"] + Math.random()},
-                block["blockContent"].map((subBlock: Block) => createElement(subBlock)));
-            // console.log(element);
-            return element;
-        }
-    }
+    return annotations = Object.keys(annotationsRaw)
+        .filter(key => annotationsRaw[key] && key !== 'color')
+        .map(key1 => notionBlockToHTML[key1]);
 };
 
-const parseBlocksToHTML = (blocks: Block[]) => {
-    let parsed: ReactElement[] = [];
-    blocks.forEach((block: any) => {
-        // console.log(block);
-        // console.log("START");
-        // console.log(block["blockContent"]);
-        let element = createElement(block) as ReactElement;
-        // console.log(element);
-        // console.log("END");
-        parsed.push(element);
+const processRichText = (richText: any) => {
+    return richText.map((text: any) => {
+        const { plain_text, annotations } = text;
+        const tags = getAnnotations(annotations);
+
+        return tags.reduceRight((content, TagName) => (
+            React.createElement(
+                TagName,
+                {key: `${TagName} ${Math.random()}`},
+                content
+            )
+        ), plain_text);
     });
-    return parsed;
+};
+
+ const processBlock = (block: any) => {
+    const { type, [type]: { rich_text } } = block;
+    const TagName: string = notionBlockToHTML[type];
+    return React.createElement(
+        TagName,
+        {key: `${TagName} ${Math.random()}`},
+        processRichText(rich_text)
+    );
 };
 
 export const MappedContent:React.FC<Params> = ({pageBlocks}) => {
     // console.log(pageBlocks);
-    let parsed = parseBlocksToHTML(pageBlocks);
+    // let parsed = parseBlocksToHTML(pageBlocks);
+    // let parsed = <div>Temp</div>;
+    let parsed = pageBlocks.map(processBlock);
+    console.log(pageBlocks);
 
     return (
-        <div className="px-5">
+        <div>
             {parsed}
         </div>
     );

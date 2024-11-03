@@ -7,10 +7,12 @@ import { useState, useEffect } from "react";
 
 import { Portfolio, Block } from "@portfolio/portfolio-types";
 import { getPortfolioData } from "@portfolio/portfolio-actions";
+import { getPortfolioPageData } from "@portfolio/[slug]/portfolio-page-actions";
 import { PortfolioTag } from "@components/PortfolioTag";
 import { ExternalLinkButton } from "@components/ExternalLinkButton";
 import { ImageThumbnail } from "@components/ImageThumbnail";
 import { MappedContent } from "@components/BlockToReact";
+import { ErrorMessage } from "@components/ErrorMsg";
 import { getPageContent } from "@scripts/get-blocks.mjs";
 
 import Loading from "@components/Loading";
@@ -23,8 +25,9 @@ import Loading from "@components/Loading";
  */
 const Page = () => {
     const [item, setItem] = useState<Portfolio>();
-    const [portfolioPageContent, setPortfolioPageContent] = useState<Block[]>([]);
+    const [portfolioPageContent, setPortfolioPageContent] = useState<any[]>([]);
     const [isLoading, setIsLoading] = useState(true);
+    const [isError, setIsError] = useState<Boolean>(false);
 
     const searchPath = usePathname().split("/");                // Page name is slug
     const slug = searchPath[searchPath.length - 1];             // Get the slug, last part of the url
@@ -33,12 +36,13 @@ const Page = () => {
         const retrievePageBlocks = async () => {
             try {
                 const portfolio = ((await getPortfolioData(slug)) as Portfolio[])[0];   // Retrieve portfolioData
-                const pageBlocks= (await getPageContent(portfolio.pageId));            // Retrieve page blocks
+                const pageBlocks= (await getPortfolioPageData(portfolio.pageId));            // Retrieve page blocks
 
                 setItem(portfolio);                         // Save portfolio data
                 setPortfolioPageContent(pageBlocks);        // Save page content
             } catch (error) {
                 console.log(`Error: ${error}`);
+                setIsError(true);
             } finally {
                 setIsLoading(false);
             }
@@ -53,9 +57,9 @@ const Page = () => {
                 <h1 className="font-bold text-3xl">{item?.title}</h1>
             </div>
 
-            <div className="flex justify-center">{isLoading && <Loading />}</div>
-            {!isLoading && !item && notFound()}
-            {!isLoading && item && <div>
+            {isError && <ErrorMessage />}
+            <div className="flex justify-center">{isLoading && !isError && <Loading />}</div>
+            {!isLoading && !isError && item && portfolioPageContent && <div>
                 <div className="rounded bg-zinc-800 flex flex-direction-row flex-wrap my-4 p-2">
                     <div className="p-2"> Techstack </div>
                     {item.tags.map((thisTag: string) => {
@@ -67,13 +71,13 @@ const Page = () => {
                     })}
                 </div>
                 
-                <ImageThumbnail
+                {/*<ImageThumbnail
                     imageUrl={item.imageUrl} 
                     altText={item.slug}
                     wSize={250}
-                    hSize={250} />
-                <MappedContent
-                    pageBlocks={portfolioPageContent} />
+                    hSize={250} />*/}
+                {<MappedContent
+                    pageBlocks={portfolioPageContent} />}
 
                 <div className="rounded bg-zinc-800 flex my-2 p-2">
                     <div className="p-2"> Links </div>

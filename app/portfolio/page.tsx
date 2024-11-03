@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { Portfolio } from "@portfolio/portfolio-types";
 import { getPortfolioData } from "@portfolio/portfolio-actions";
 import { PortfolioCard } from "@components/PortfolioCardTest";
-import { getPortfolioSlugs} from "@scripts/get-portfolios.mjs";
+import { ErrorMessage } from "@components/ErrorMsg";
 
 import Loading from "@components/Loading";
 
@@ -18,6 +18,7 @@ const PortfolioIndex = () => {
     const [portfolios, setPortfolios] = useState<Portfolio[]>([]);
     const [ghostPortfolios, setGhostPortfolios] = useState<string[]>([]);
     const [isLoading, setIsLoading] = useState<Boolean>(true);
+    const [isError, setIsError] = useState<Boolean>(false);
 
     useEffect(() => {
         /**
@@ -26,11 +27,12 @@ const PortfolioIndex = () => {
          */
         const fetchPortfolios = async () => {
             try {
-                const portfolioSlugs = (await getPortfolioSlugs()) as string[];     // Retrieve list of portfolio slugs
-                setPortfolios(await getPortfolioData(portfolioSlugs) as Portfolio[]);
-                
+                const portfolioData = (await getPortfolioData()) as Portfolio[];
+                setPortfolios(portfolioData);
+
             } catch (error) {
                 console.log(`Error: ${error}`);
+                setIsError(true);
             } finally {
                 setIsLoading(false);
             }
@@ -52,8 +54,9 @@ const PortfolioIndex = () => {
                 </p>
             </div>
             <div className="rounded bg-closeiToBlack flex flex-direction-row flex-wrap justify-center gap-4">
-                {isLoading && ghostPortfolios.length === 0 && <Loading />}
-                {portfolios.map((portfolio: Portfolio, i) => {
+                {isError && <ErrorMessage />}
+                {isLoading && !isError && <Loading />}
+                {!isLoading && !isError && portfolios.map((portfolio: Portfolio, i) => {
                     return (
                         <PortfolioCard key={i} item={portfolio}></PortfolioCard>
                     );
