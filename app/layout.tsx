@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
-import { Header } from "./components/Header";
-import { Footer } from "./components/Footer";
+import { Header } from "@components/Header";
+import { Footer } from "@components/Footer";
 import { Inter } from "next/font/google";
 
 import "./globals.css";
@@ -25,9 +25,6 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-        <head>
-            <link rel="icon" href="../public/favicon.ico" sizes="any"/>
-        </head>
         <body className={`${inter.className} bg-closeToBlack`}>
             <div id="main" className="flex flex-col justify-between min-h-screen">
             <Header/>

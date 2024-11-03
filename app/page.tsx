@@ -1,8 +1,8 @@
 import { NextPage } from "next";
 import Image from "next/image";
 
-import meFull from "../public/images/MeFull.png";
-import me from "../public/images/me.png";
+import meFull from "@public/images/MeFull.png";
+import me from "@public/images/me.png";
 
 const HomeIndex: NextPage = () => {
   return (
